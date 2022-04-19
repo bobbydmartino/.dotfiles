@@ -1,0 +1,14 @@
+version: '3'
+services:
+  dot:
+    build: .
+    tty: true
+    stdin_open: true   
+    network_mode: "host"    
+    environment:
+      DISPLAY: $DISPLAY    
+    volumes:
+      - ./.config:/root/.config
+      - ./.local:/root/.local
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    hostname: commander

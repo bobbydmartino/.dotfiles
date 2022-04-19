@@ -1,0 +1,15 @@
+pane	DEV	0	1	:*	0	:/root	:/root/.config/tmux	1	zsh	:
+pane	DEV	1	0	:-	0	:/root	:/root	1	zsh	:
+pane	DEV	1	0	:-	1	:/root	:/root	0	zsh	:
+pane	DEV	2	0	:	0	:/root	:/root	0	zsh	:
+pane	DEV	2	0	:	1	commander	:/root	0	zsh	:
+pane	DEV	2	0	:	2	:/root	:/root/.config	0	zsh	:
+pane	DEV	2	0	:	3	commander	:/root	1	zsh	:
+pane	DOCKER	0	1	:*	0	commander	:/root/.config/shell	1	zsh	:
+pane	FILES	0	1	:*	0	commander	:/root/.config/shell	1	zsh	:
+window	DEV	0	:main	1	:*	af5e,238x40,0,0,1	off
+window	DEV	1	:sec	0	:-	b309,238x40,0,0[238x16,0,0,2,238x23,0,17,3]	off
+window	DEV	2	:third	0	:	7dfe,238x40,0,0{119x40,0,0[119x20,0,0,4,119x19,0,21,25],118x40,120,0[118x20,120,0,5,118x19,120,21,24]}	off
+window	DOCKER	0	:zsh	1	:*	d991,118x60,0,0,22	:
+window	FILES	0	:zsh	1	:*	e7e2,238x48,0,0,23	:
+state	DEV	DOCKER

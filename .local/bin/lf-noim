@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+
+CACHE="$HOME/.cache/lf/thumbnail.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$1")" | sha256sum | awk '{print $1}'))"
+
+
+file="$1"; shift
+case "$(basename "$file" | tr '[:upper:]' '[:lower:]')" in
+	*.tar*) tar tf "$file" ;;
+	*.zip) unzip -l "$file" ;;
+	*.rar) unrar l "$file" ;;
+	*.7z) 7z l "$file" ;;
+	*.avi|*.mp4|*.mkv)
+		ffmpegthumbnailer -i "$file" -o "$CACHE".png -s 0
+		viu "${CACHE}".png -w "$(($3-1))" -h "$(($2-1))" ;;
+	*.pdf)
+		[ ! -f "${CACHE}.jpg" ] && \
+			gs -o "$CACHE".png -sDEVICE=pngalpha -dLastPage=1 "$file" >/dev/null 
+		viu "${CACHE}".png -w "$(($3-1))" -h "$(($2-1))" ;;
+	*.jpg|*.jpeg|*.png|*.bmp)
+		viu "$file" -w "$(($3-1))" -h "$(($2-1))" ;;
+	*.svg)
+		mediainfo "$file" "$@";;
+	*.gif)
+		gm convert "$file[0]" "$CACHE".png
+		viu "${CACHE}".png -w "$(($3-1))" -h "$(($2-1))" ;;
+	*) batcat "$file" --paging=never --terminal-width="$2" --color=always --theme=base16  "$1" | tail -n +3;;
+esac
+return 0 #127 # nonzero retcode required for lf previews to reload

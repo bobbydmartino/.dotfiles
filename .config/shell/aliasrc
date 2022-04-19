@@ -1,0 +1,71 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
+alias tmux="tmux -u"
+
+alias c="clear"
+
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	bc="bc -ql" \
+	mkdir="mkdir -pv" \
+	ffmpeg="ffmpeg -hide_banner"
+
+# Colorize commands when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi" \
+	ip="ip -color=auto"
+
+cls()
+{
+    __doc__="""
+    Clears the terminal screen
+    References:
+        https://askubuntu.com/questions/25077/how-to-really-clear-the-terminal
+    """
+    tput reset
+}
+
+alias e="$EDITOR"
+
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
+
+alias ta="tmux attach"
+
+alias ll="ls -als --color=auto --group-directories-first"
+alias lt='ls --human-readable --size -1 -S --classify'
+alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
+alias cpv='rsync -ah --info=progress2'
+
+#make trash aliases for rm!
+#use trash cli
+
+#make git aliases, either formal or informal! (im leaning informal)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

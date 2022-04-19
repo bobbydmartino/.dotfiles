@@ -1,0 +1,17 @@
+pane	0	0	0	:-	0	:/root	:/root	1	zsh	:
+pane	0	1	0	:	0	:/root	:/root	0	zsh	:
+pane	0	1	0	:	1	:/root	:/root	1	zsh	:
+pane	0	2	1	:*	0	:/root	:/root	0	zsh	:
+pane	0	2	1	:*	1	:/root	:/root	1	zsh	:
+pane	1	0	1	:*	0	:/root	:/root	1	zsh	:
+pane	2	0	1	:*	0	commander	:/root/.config/tmux	1	zsh	:
+pane	3	0	1	:*	0	commander	:/root/.config/tmux	1	zsh	:
+pane	4	0	1	:*	0	commander	:/root	1	zsh	:
+window	0	0	:main	0	:-	cf5e,238x48,0,0,1	off
+window	0	1	:sec	0	:	2911,238x48,0,0[238x22,0,0,2,238x25,0,23,3]	off
+window	0	2	:third	1	:*	0ebe,238x48,0,0{119x48,0,0,4,118x48,120,0,5}	off
+window	1	0	:zsh	1	:*	cf63,238x48,0,0,6	:
+window	2	0	:zsh	1	:*	cf64,238x48,0,0,7	:
+window	3	0	:zsh	1	:*	cf65,238x48,0,0,8	:
+window	4	0	:zsh	1	:*	cf66,238x48,0,0,9	:
+state	2	3

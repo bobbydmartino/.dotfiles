@@ -1,0 +1,9 @@
+$ rm -rf nnn
+$ chmod 650 .dockerenv 
+$ chmod 666 tmux_resurrect_2022040* 
+$ chmod -x tmux_resurrect_20220403T023658.txt 
+$ rm tmux_resurrect_20220403T02*
+$ chmod 666 resurrect.tmux 
+$ q
+$ q
+$ sxiv 640px-PNG_transparency_demonstration_1.png 

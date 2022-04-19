@@ -1,0 +1,22 @@
+remap system keys to caps->esc <soon to be deprecated>
+
+
+TODO:
+pimp aliases
+
+connect to other containers
+
+## Vim ##
+basic vimrc
+vim plugin manager
+train/practice
+vim wiki set up to shadow repo cheat sheet
+pudb and other python plugins/test
+nbterm test 
+nbterm with pudb.vim
+vimpyn
+
+install sc-im for spreadsheets
+
+mpv working
+fzf
