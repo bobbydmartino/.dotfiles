@@ -1,0 +1,19 @@
+pane	DEV	0	0	:-	0	:/root	:/root/.config/shell	0	zsh	:
+pane	DEV	0	0	:-	1	commander	:/root	0	zsh	:
+pane	DEV	0	0	:-	2	commander	:/root	1	zsh	:
+pane	DEV	0	0	:-	3	commander	:/root	0	zsh	:
+pane	DEV	1	1	:*	0	:/root	:/root/.config/tmux	1	nvim	:nvim .tmux.conf
+pane	DEV	1	1	:*	1	commander	:/root/.local/bin	0	lf	:lf -last-dir-path=/tmp/tmp.9fYVnjxe4s
+pane	DEV	2	0	:	0	:/root	:/root/.config/tmux	0	zsh	:
+pane	DEV	2	0	:	1	commander	:/root	1	zsh	:
+pane	DEV	2	0	:	2	:/root	:/root/.config	0	zsh	:
+pane	DEV	2	0	:	3	commander	:/root	0	zsh	:
+pane	DOCKER	0	1	:*	0	commander	:/root/.config/shell	1	zsh	:
+pane	FILES	0	1	:*	0	commander	:/root/.config/shell	0	zsh	:
+pane	FILES	0	1	:*	1	commander	:/root	1	zsh	:
+window	DEV	0	:main	0	:-	0c73,238x52,0,0{119x52,0,0[119x26,0,0,1,119x25,0,27,13],118x52,120,0[118x26,120,0,10,118x25,120,27,14]}	off
+window	DEV	1	:sec	1	:*	a9fc,238x52,0,0{155x52,0,0,2,82x52,156,0,12}	off
+window	DEV	2	:third	0	:	bb53,238x52,0,0{119x52,0,0[119x29,0,0,4,119x22,0,30,5],118x52,120,0[118x29,120,0,6,118x22,120,30,7]}	off
+window	DOCKER	0	:zsh	1	:*	b965,238x52,0,0,8	:
+window	FILES	0	:zsh	1	:*	a4d3,238x52,0,0[238x26,0,0,9,238x25,0,27,11]	:
+state	DEV	DOCKER

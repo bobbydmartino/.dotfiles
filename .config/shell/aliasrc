@@ -4,6 +4,8 @@
 [ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
 
 alias tmux="tmux -u"
+alias ta="tmux new -As DEV"
+alias tks="tmux kill-server"
 
 alias c="clear"
 
@@ -38,8 +40,7 @@ alias e="$EDITOR"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
-alias ta="tmux attach"
-
+alias mk="touch"
 alias ll="ls -als --color=auto --group-directories-first"
 alias lt='ls --human-readable --size -1 -S --classify'
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
@@ -47,11 +48,41 @@ alias cpv='rsync -ah --info=progress2'
 
 #make trash aliases for rm!
 #use trash cli
+alias tp="trash-put"
+alias tl="trash-list"
+alias tr="trash-restore"
+alias te="trash-empty"
+
+#cd aliases
+alias cdd="cd .."
+alias cddd="cd ../.."
+alias cdddd="cd ../../.."
+alias cddddd="cd ../../../.."
+alias cdddddd="cd ../../../../.."
+alias cddddddd="cd ../../../../../.."
+
+alias cd1="cd .."
+alias cd2="cd ../.."
+alias cd3="cd ../../.."
+alias cd4="cd ../../../.."
+alias cd5="cd ../../../../.."
+
 
 #make git aliases, either formal or informal! (im leaning informal)
+alias gs="git status -sb"
+alias gl="git log"
+alias ga="git add -A"
+alias gad="git add ."
+alias gc="git commit -m"
+alias gcwip="git commit -m 'wip'"
+alias gpo="git push -u origin"
 
-
-
+# History commands
+alias h="history"
+alias h1="history 10"
+alias h2="history 20"
+alias h3="history 30"
+alias hgrep='history | grep'
 
 
 

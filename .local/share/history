@@ -975,3 +975,76 @@ tmux attach
 tmux attach
 rm -rf .local/share/nvim/shada
 rm -rf .config/procps
+ls -al
+ls -hl
+ls -als
+lfcd
+e .tmux.conf
+e .tmux.conf
+e .tmux.conf
+ll
+e .tmux.conf
+lfcd
+cd
+lfcd
+cd
+ll
+lfcd
+e aliasrc
+ls
+ll
+cd
+cd .config
+lfcd
+lfcd
+lfcd
+cd
+lfcd
+bg
+bg 1
+bg
+fg
+lfcd
+e .tmux.conf
+e .tmux.conf
+e .tmux.conf
+e .tmux.conf
+e .tmux.conf
+e .tmux.conf
+tmux ls
+lfcd
+e aliasrc
+e aliasrc
+lfcd
+cd
+nvim
+touch temp.txt
+trash temp.txt
+trash-list
+path
+history
+cd .tmux
+ls
+ls -al
+ll
+cd
+lfcd
+nvim .tmux.conf
+c
+cd
+c
+cd
+c
+cd
+c
+nvim .tmux.conf
+c
+cd
+c
+cd
+c
+lfcd
+e .tmux.conf
+lfcd
+echo $BWD
+echo BWD

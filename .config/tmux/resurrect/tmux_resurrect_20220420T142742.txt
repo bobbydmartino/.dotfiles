@@ -1,0 +1,21 @@
+pane	DEV	0	1	:*	0	:/root	:/root	1	zsh	:
+pane	DEV	0	1	:*	1	commander	:/root	0	zsh	:
+pane	DEV	0	1	:*	2	commander	:/root	0	zsh	:
+pane	DEV	0	1	:*	3	commander	:/root	0	zsh	:
+pane	DEV	1	0	:	0	commander	:/root	1	zsh	:
+pane	DEV	1	0	:	1	commander	:/root	0	zsh	:
+pane	DEV	1	0	:	2	commander	:/root	0	zsh	:
+pane	DEV	1	0	:	3	commander	:/root	0	zsh	:
+pane	DEV	2	0	:-	0	commander	:/root	1	zsh	:
+pane	DEV	2	0	:-	1	commander	:/root	0	zsh	:
+pane	DEV	2	0	:-	2	commander	:/root	0	zsh	:
+pane	DEV	2	0	:-	3	commander	:/root	0	zsh	:
+pane	DOCKER	0	1	:*	0	commander	:/root/.config/shell	1	zsh	:
+pane	FILES	0	1	:*	0	commander	:/root/.config/shell	0	zsh	:
+pane	FILES	0	1	:*	1	commander	:/root	1	zsh	:
+window	DEV	0	:main	1	:*	54ed,238x41,0,0{119x41,0,0[119x20,0,0,1,119x20,0,21,2],118x41,120,0[118x20,120,0,3,118x20,120,21,4]}	off
+window	DEV	1	:sec	0	:	c45c,238x41,0,0[238x20,0,0{119x20,0,0,15,118x20,120,0,22},238x20,0,21{119x20,0,21,19,118x20,120,21,20}]	off
+window	DEV	2	:third	0	:-	045f,238x41,0,0[238x20,0,0{119x20,0,0,10,118x20,120,0,18},238x20,0,21{119x20,0,21,16,118x20,120,21,17}]	off
+window	DOCKER	0	:zsh	1	:*	59e0,238x41,0,0,11	:
+window	FILES	0	:zsh	1	:*	e07a,238x41,0,0[238x20,0,0,12,238x20,0,21,13]	:
+state	DEV	DOCKER
