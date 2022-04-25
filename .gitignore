@@ -5,7 +5,7 @@
 .zcompdump
 .build/
 plugins/
-
+.local/share/lf/files/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
