@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 
@@ -59,23 +60,28 @@
 # ln -sf ~/.config/tmux/resurrect ~/.tmux/resurrect
 
 # #check if .vscode-server is installled
+if [ -d ~/.vscode-server ]; then 
+  ln -sf ~/.config/vscode/settings.json ~/.vscode-server/data/Machine/settings.json
+else
+  #call download-vs-code-server.sh
+fi
+
+
 #   #if not install vscode server somehow
 #   #if so then install extensions for programming
 
 # #INSTALL PLUGINS FROM SOURCE
-while IFS="" read -r p || [ -n "$p" ]
-do
-  arrIN=(${p// / })
+# while IFS="" read -r p || [ -n "$p" ]
+# do
+#   arrIN=(${p// / })
+#   mkdir -p ".config/${arrIN[0]}"
+#   mkdir -p ".config/${arrIN[0]}/plugins/"
 
-  
-  mkdir -p ".config/${arrIN[0]}"
-  mkdir -p ".config/${arrIN[0]}/plugins/"
-
-  if [ ! -d ".config/${arrIN[0]}/plugins/${arrIN[1]}" ]
-  then
-          git clone ${arrIN[2]} ".config/${arrIN[0]}/plugins/${arrIN[1]}"
-  fi
-done < ~/.config/plugins/.pluginlist
+#   if [ ! -d ".config/${arrIN[0]}/plugins/${arrIN[1]}" ]
+#   then
+#           git clone ${arrIN[2]} ".config/${arrIN[0]}/plugins/${arrIN[1]}"
+#   fi
+# done < ~/.config/plugins/.pluginlist
 
 
 # chsh -s /usr/bin/zsh
