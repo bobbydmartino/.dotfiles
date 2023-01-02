@@ -1,16 +1,22 @@
 #!/bin/bash
 
-#remove fonts files
 
-#apt remove sxiv, mediainfo, bat, zathura, mpv, trash-cli, neofetch, graphicsmagick, ffmpegthumbnailer
+while read -r line; do
+    package=$(echo "$line" | cut -d ':' -f 1)
+    installed=$(echo "$line" | cut -d ':' -f 2)
+    installed=$(echo "$installed" | tr -d ' ')  # Remove leading/trailing whitespace
 
-#TODO: if something already installed, keep it, else remove
-#TODO: track prevshell and change back to that
+    # If the package is not installed, remove it
+    if [ "$installed" = "false" ]; then
+        apt remove -y "$package"
+    fi
+done < ~/.config/pluginlist/backup.yaml
 
-#if .old exists, else throw error and do not remove
-    #TODO: prompt if want to go back to ubuntu basic configuration, and copy those files in
+sed -i '/exec zsh/d' ~/.bashrc
 
-#rm .config and .local and .zprofile etc
-#mv .old/* . and rmdir .old
-
-#chsh -s prevshell
+rm -rf ~/.config ~/.local ~/.tmux ~/.cache
+rm ~/.tmux.conf ~/.zprofile ~/.zshrc 
+mv ~/.old/* ~/
+rm -rf ~/.old
+# rm ~/.vscode-server/data/Machine/settings.json
+# [ ! -d ~/settings.json ] || mv ~/settings.json ~/.vscode-server/data/Machine/settings.json
