@@ -1,0 +1,4 @@
+tmux tpm https://github.com/tmux-plugins/tpm.git
+tmux tmux-resurrect https://github.com/tmux-plugins/tmux-resurrect.git
+tmux tmux-sessionist https://github.com/tmux-plugins/tmux-sessionist.git
+zsh fsh https://github.com/zsh-users/zsh-syntax-highlighting.git
