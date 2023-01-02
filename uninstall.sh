@@ -18,5 +18,5 @@ rm -rf ~/.config ~/.local ~/.tmux ~/.cache
 rm ~/.tmux.conf ~/.zprofile ~/.zshrc 
 mv ~/.old/* ~/
 rm -rf ~/.old
-# rm ~/.vscode-server/data/Machine/settings.json
-# [ ! -d ~/settings.json ] || mv ~/settings.json ~/.vscode-server/data/Machine/settings.json
+rm ~/.vscode-server/data/Machine/settings.json
+[ ! -f ~/settings.json ] || mv ~/settings.json ~/.vscode-server/data/Machine/settings.json

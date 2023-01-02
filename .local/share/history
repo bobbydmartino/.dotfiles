@@ -1048,3 +1048,4 @@ e .tmux.conf
 lfcd
 echo $BWD
 echo BWD
+lf
