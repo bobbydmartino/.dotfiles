@@ -1049,3 +1049,6 @@ lfcd
 echo $BWD
 echo BWD
 lf
+ls
+lf
+cat .bashrc
