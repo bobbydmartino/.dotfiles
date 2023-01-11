@@ -19,7 +19,6 @@ alias \
 
 # Colorize commands when possible.
 alias \
-	ls="ls -hN --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
@@ -41,8 +40,7 @@ alias e="$EDITOR"
 alias path='echo $PATH | tr -s ":" "\n"'
 
 alias mk="touch"
-alias ll="ls -als --color=auto --group-directories-first"
-alias lt='ls --human-readable --size -1 -S --classify'
+alias ll="ls -al"
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
 alias cpv='rsync -ah --info=progress2'
 
