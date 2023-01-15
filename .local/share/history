@@ -1254,3 +1254,68 @@ e init.vim
 q
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \\
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+c
+c
+lfcd
+cd
+cd dotfiles
+ls
+nano install.sh
+nvim install.sh
+nvim install.sh
+cd .config
+ls
+c
+ls
+ll
+cd tmux
+ls
+ll
+alias e
+nvim .tmux.conf
+nvim .tmux.conf
+nvim .tmux.conf
+cddd
+git status
+alias e
+nvim .gitignore
+nvim .gitignore
+gs
+git status
+cd ~/.local/share/nvim
+ls
+ll
+cd site
+ls
+cd autoload
+ls
+cd
+cd dotfiles
+ls
+c
+git status
+git add .
+git status
+git commit -m "update defaults, work on mac"
+git push -u origin mac
+lfcd
+cddd
+lfcd
+nvim .tmux.conf
+cdd
+cd nvim/
+nvim init.vim
+nvim init.vim
+c
+c
+c
+echo $SCREEN
+echo $TERM
+echo $TMUX
+mosh
+brew install mosh
+mosh grundy
+mosh ocisly
+mosh ocisly
+c
+nvim ~/.zshrc

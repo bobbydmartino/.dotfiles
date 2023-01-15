@@ -14,6 +14,9 @@ au BufNewFile, BufRead *.py
 " Execute local config for different projects
 set exrc
 
+" Use the system clipboard
+set clipboard=unnamed
+
 " Line Numbering
 set relativenumber
 set nu

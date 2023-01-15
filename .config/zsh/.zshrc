@@ -46,6 +46,6 @@ source ~/.config/shell/aliasrc
 source ~/.zprofile
 source ~/.config/zsh/plugins/fsh/zsh-syntax-highlighting.plugin.zsh
 
-if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+if ! { [ "$TERM" = "screen-256color" ] && [ -n "$TMUX" ]; } then
   neofetch
 fi

@@ -1,0 +1,23 @@
+pane	DEV	0	1	:*	0	:/root	:/Users/robert.martino/dotfiles/.config/nvim	1	zsh	:
+pane	DEV	0	1	:*	1	commander	:/Users/robert.martino/dotfiles/.config/nvim	0	zsh	:
+pane	DEV	0	1	:*	2	commander	:/Users/robert.martino/dotfiles/.config/nvim	0	zsh	:
+pane	DEV	0	1	:*	3	commander	:/Users/robert.martino/dotfiles/.config/nvim	0	zsh	:
+pane	DEV	1	0	:	0	commander	:/Users/robert.martino/dotfiles/.config/nvim	1	zsh	:
+pane	DEV	1	0	:	1	commander	:/Users/robert.martino/dotfiles/.config/nvim	0	zsh	:
+pane	DEV	1	0	:	2	commander	:/Users/robert.martino/dotfiles/.config/nvim	0	zsh	:
+pane	DEV	1	0	:	3	commander	:/Users/robert.martino/dotfiles/.config/nvim	0	zsh	:
+pane	DEV	2	0	:-	0	commander	:/Users/robert.martino/dotfiles/.config/nvim	1	zsh	:
+pane	DEV	2	0	:-	1	commander	:/Users/robert.martino/dotfiles/.config/nvim	0	zsh	:
+pane	DEV	2	0	:-	2	commander	:/Users/robert.martino/dotfiles/.config/nvim	0	zsh	:
+pane	DEV	2	0	:-	3	commander	:/Users/robert.martino/dotfiles/.config/nvim	0	zsh	:
+pane	LAVA	0	1	:*	0	commander	:/Users/robert.martino/dotfiles/.config/nvim	0	zsh	:
+pane	LAVA	0	1	:*	1	commander	:/Users/robert.martino/dotfiles/.config/nvim	1	zsh	:
+pane	SCOUT	0	1	:*	0	commander	:/Users/robert.martino/dotfiles/.config/nvim	1	zsh	:
+pane	STRATO	0	1	:*	0	khq-7095	:/Users/robert.martino/dotfiles/.config/nvim	1	zsh	:
+window	DEV	0	:main	1	:*	efe6,362x95,0,0{181x95,0,0[181x47,0,0,0,181x47,0,48,1],180x95,182,0[180x47,182,0,2,180x47,182,48,3]}	off
+window	DEV	1	:sec	0	:	9f79,362x95,0,0[362x47,0,0{181x47,0,0,4,180x47,182,0,5},362x47,0,48{181x47,0,48,6,180x47,182,48,7}]	off
+window	DEV	2	:third	0	:-	7038,362x95,0,0[362x47,0,0{181x47,0,0,8,180x47,182,0,9},362x47,0,48{181x47,0,48,10,180x47,182,48,11}]	off
+window	LAVA	0	:zsh	1	:*	712a,362x95,0,0[362x47,0,0,13,362x47,0,48,14]	:
+window	SCOUT	0	:zsh	1	:*	65d1,362x95,0,0,12	:
+window	STRATO	0	:zsh	1	:*	65d4,362x95,0,0,15	:
+state	DEV	STRATO
