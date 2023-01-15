@@ -1052,3 +1052,205 @@ lf
 ls
 lf
 cat .bashrc
+ls
+./install.sh
+./install.sh
+./install.sh
+./install.sh
+./install.sh
+cd
+ls
+ls -al
+source .zshrc
+c
+dotfiles/l
+dotfiles
+ls
+git status
+git add .
+git commit -m "working install on mac"
+git config --global user.email bobbydmartino@gmail.com
+git config --global user.name bobby
+git commit -m "working install on mac"
+git push -u origin mac
+c
+sftp ocisly
+git clone git@github.com:bobbydmartino/dotfiles.git
+ls
+cd dotfiles
+ls
+cd .config
+ls
+ls
+cd zsh
+ls
+ls -al
+vim .zshrc
+cp .zshrc ~/
+cd
+source .zshrc
+c
+ls
+nano .zprofile
+ls
+nano .bash_aliases
+nano .config
+ls --
+ls -- N
+ls -al
+ll
+ls
+cd .config/shell/
+nano aliasrc
+ls
+nano aliasrc
+ls
+cd
+source .zshrc
+c
+ls
+alias ls 
+alias ls=ls
+ls
+ll
+alias ll=ls -al
+ll
+c
+cd dotfiles
+ls
+git status
+git restore .config/
+gs
+git status
+git branch
+git branch -b mac
+git branch  mac
+git status
+git checkout mac
+git status
+nano .config/zsh/zshrc
+nano .config/zsh/.zshrc
+nano .config/shell/profile
+nano .config/shell/aliasrc
+cd
+rm .zshrc
+source 
+source .zshrc
+ls
+ls -la
+rm .tmux.conf
+rm -rf .old
+rm .config
+rm .local
+rm .zprofile
+ll
+ls -al
+cd dotfiles
+ls
+nano install.sh
+c
+ta
+e
+nvim
+brew install neovim
+lf
+cd .local
+ls
+cd bin
+ls
+lf
+brew install lf
+cd
+ls
+lf
+c
+lf
+alias e
+alias e nvim
+alias e=nvim
+e .zprofile
+lf
+brew install sxiv
+lfcd
+cd
+cdddd
+cd
+sg
+alias sg="ssh grundy"
+sg
+curl --proto '=https' --tlsv1.2 -sSLf "https://git.io/JBhDb" | sh
+termscp
+termscp
+sftp belegaer
+ls
+sg
+c
+defaults find KeyRepeat
+ls
+e mount.sh
+e run_tracker.sh
+cd code
+ls
+cd volcano
+ls
+cd configs
+ls
+alias e
+alias e=nvim
+e keypointconfig.yml
+c
+cddd
+cd
+ssh ocisly
+ssh belegaer
+ls
+c
+c
+c
+ta
+c
+ta
+ta
+ta
+echo $TERM
+echo $TMUX
+lfcd
+alias e
+source ~/.zshrc
+c
+e
+lf
+e init.vim
+lfcd
+e lfrc
+cd
+lf
+lf
+source .zprofile
+e .zprofile
+echo $EDITOR
+lf
+lfcd
+e init.vim
+e init.vim
+e init.vim
+e init.vim
+nvim +PlugInstall +qall
+e init.vim
+nvim +PlugInstall +qall
+nvim +PlugInstall 
+xcode-select --install
+e init.vim
+nvim +PlugInstall 
+e init.vim
+e init.vim
+e init.vim
+e init.vim
+e init.vim
+e init.vim
+lfcd
+nvim/
+e init.vim
+q
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \\
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

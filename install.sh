@@ -1,53 +1,53 @@
 #!/bin/bash
 
-# rm -f $PWD/.config/pluginlist/backup.yaml
-# #track what already exists and save to backup.yaml
+rm -f $PWD/.config/pluginlist/backup.yaml
+#track what already exists and save to backup.yaml
 
-# # Check if a package is installed
-# is_installed() {
-#     dpkg -s "$1" >/dev/null 2>&1
-# }
+# Check if a package is installed
+is_installed() {
+    dpkg -s "$1" >/dev/null 2>&1
+}
 
-# # Write the name of the package and whether it's installed to a YAML file
-# write_to_yaml() {
-#     if is_installed "$1"; then
-#         echo "$1: true" >> $PWD/.config/pluginlist/backup.yaml
-#     else
-#         echo "$1: false" >> $PWD/.config/pluginlist/backup.yaml
-#     fi
-# }
+# Write the name of the package and whether it's installed to a YAML file
+write_to_yaml() {
+    if is_installed "$1"; then
+        echo "$1: true" >> $PWD/.config/pluginlist/backup.yaml
+    else
+        echo "$1: false" >> $PWD/.config/pluginlist/backup.yaml
+    fi
+}
 
-# # Call the function for each package you want to check
-# write_to_yaml neofetch
-# write_to_yaml sxiv
-# write_to_yaml tmux
-# write_to_yaml wget
-# write_to_yaml zsh
-# write_to_yaml sudo
-# write_to_yaml sxiv
-# write_to_yaml mediainfo
-# write_to_yaml bat
-# write_to_yaml curl
-# write_to_yaml rsync
-# write_to_yaml git
-# write_to_yaml zathura
-# write_to_yaml mpv 
-# write_to_yaml python3-pip
-# write_to_yaml trash-cli
-# write_to_yaml neofetch
-# write_to_yaml graphicsmagick
-# write_to_yaml ffmpegthumbnailer
+# Call the function for each package you want to check
+write_to_yaml neofetch
+write_to_yaml sxiv
+write_to_yaml tmux
+write_to_yaml wget
+write_to_yaml zsh
+write_to_yaml sudo
+write_to_yaml sxiv
+write_to_yaml mediainfo
+write_to_yaml bat
+write_to_yaml curl
+write_to_yaml rsync
+write_to_yaml git
+write_to_yaml zathura
+write_to_yaml mpv 
+write_to_yaml python3-pip
+write_to_yaml trash-cli
+write_to_yaml neofetch
+write_to_yaml graphicsmagick
+write_to_yaml ffmpegthumbnailer
 
-# while read -r line; do
-#     package=$(echo "$line" | cut -d ':' -f 1)
-#     installed=$(echo "$line" | cut -d ':' -f 2)
-#     installed=$(echo "$installed" | tr -d ' ')  # Remove leading/trailing whitespace
+while read -r line; do
+    package=$(echo "$line" | cut -d ':' -f 1)
+    installed=$(echo "$line" | cut -d ':' -f 2)
+    installed=$(echo "$installed" | tr -d ' ')  # Remove leading/trailing whitespace
 
-#     # If the package is not installed, remove it
-#     if [ "$installed" = "false" ]; then
-#         brew install "$package"
-#     fi
-# done < $PWD/.config/pluginlist/backup.yaml
+    # If the package is not installed, remove it
+    if [ "$installed" = "false" ]; then
+        brew install "$package"
+    fi
+done < $PWD/.config/pluginlist/backup.yaml
 
 
 
@@ -81,6 +81,9 @@ if [ -d ~/.vscode-server ]; then
     # cp ~/.config/vscode/settings.json ~/.vscode-server/data/Machine/settings.json
     cat ~/.config/vscode/extensions.list | xargs -L 1 code --install-extension
 fi
+
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # #INSTALL PLUGINS FROM SOURCE
 while IFS="" read -r p || [ -n "$p" ]

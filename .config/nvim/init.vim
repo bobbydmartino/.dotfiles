@@ -3,10 +3,13 @@
 let mapleader=" "
 
 " Tabs and Spaces
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
+au BufNewFile, BufRead *.py
+    \ set tabstop=4 softtabstop=4
+    \ set shiftwidth=4
+    \ set expandtab
+    \ set smartindent
+    \ set fileformat=unix 
+    \ set colorcolumn=80
 
 " Execute local config for different projects
 set exrc
@@ -37,19 +40,27 @@ set scrolloff=8
 
 " Columns
 set signcolumn=yes
-set colorcolumn=80
 
-" PLUGINS
-set rtp +=~/.vim
+"PLUGINS
 call plug#begin('~/.vim/plugged')
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'gruvbox-community/gruvbox'
+Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
+
+
+
+set encoding=UTF-8
 
 call plug#end()
 
+" python code settings
+syntax on
+set t_Co=256
+set foldmethod=indent
+set foldlevel=99
+
+
+
+
 " Colors
-colorscheme gruvbox
 highlight Normal guibg=none
 set bg=dark
-
-" Add Telescope remaps (TODO)
+:colorscheme ayu

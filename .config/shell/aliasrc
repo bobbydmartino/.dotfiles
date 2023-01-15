@@ -34,8 +34,8 @@ cls()
     tput reset
 }
 
-alias e="$EDITOR"
-
+alias e="nvim"
+alias nano="nvim"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
