@@ -1,15 +1,20 @@
-
 " Leader
 let mapleader=" "
 
 " Tabs and Spaces
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
+au BufNewFile, BufRead *.py
+    \ set tabstop=4 softtabstop=4
+    \ set shiftwidth=4
+    \ set expandtab
+    \ set smartindent
+    \ set fileformat=unix
+    \ set colorcolumn=80
 
 " Execute local config for different projects
 set exrc
+
+" Use the system clipboard
+set clipboard=unnamed
 
 " Line Numbering
 set relativenumber
@@ -37,19 +42,29 @@ set scrolloff=8
 
 " Columns
 set signcolumn=yes
-set colorcolumn=80
 
-" PLUGINS
-set rtp +=~/.vim
-call plug#begin('~/.vim/plugged')
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'gruvbox-community/gruvbox'
+"PLUGINS
+call plug#begin()
+Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
+Plug 'https://github.com/tpope/vim-commentary' " auto comment
+Plug 'https://github.com/tpope/vim-surround' " surround with parentheses etc.
+Plug 'https://github.com/tpope/vim-fugitive' " git commands in vim (testing to see if I like it)
+Plug 'https://github.com/vim-airline/vim-airline' " airline
+Plug 'https://github.com/vim-airline/vim-airline-themes' " themes for vim airline
+
+
+set encoding=UTF-8
 
 call plug#end()
 
+" python code settings
+syntax on
+set t_Co=256
+set foldmethod=indent
+set foldlevel=99
+
 " Colors
-colorscheme gruvbox
 highlight Normal guibg=none
 set bg=dark
-
-" Add Telescope remaps (TODO)
+let g:airline_theme='luna'
+:colorscheme ayu
