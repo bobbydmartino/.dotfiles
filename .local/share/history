@@ -1052,3 +1052,42 @@ lf
 ls
 lf
 cat .bashrc
+c
+cd code/dotfiles/
+git status
+git pull
+git branch
+git restore .config/shell/aliasrc
+git pull
+git status
+git add .
+ll
+e .gitignore
+nvim .gitignore
+git status
+git add .
+git status
+git commit -m "updates to tmux and vim plugins"
+git status
+git push -u origin main
+git push -u origin main
+cat ~/.tmux.conf
+git status
+git commit -m "updates to tmux and vim plugins"
+git push -u origin main
+cd
+cat .zprofile
+cd .config/nvim
+ls
+cat init.vim
+cd 
+cd code
+rm -rf dotfiles
+git clone git@github.com:bobbydmartino/dotfiles.git
+cd
+ll
+e
+alias e
+source .zshrc
+e
+e
