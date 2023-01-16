@@ -7,6 +7,9 @@
 plugins/
 .local/share/lf/files/
 
+# vim autoload
+autoload
+.local/share/nvim
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

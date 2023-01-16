@@ -90,5 +90,11 @@ do
           git clone ${arrIN[2]} ".config/${arrIN[0]}/plugins/${arrIN[1]}"
   fi
 done < ~/.config/pluginlist/.pluginlist
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+ln -sf ~/.vim/autoload ~/.config/nvim/autoload
+
 # #add exec zsh to end of bashrc for tmux
 echo "exec zsh" >> ~/.bashrc
