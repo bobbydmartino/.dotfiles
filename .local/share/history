@@ -1319,3 +1319,143 @@ mosh ocisly
 mosh ocisly
 c
 nvim ~/.zshrc
+lfcd
+lfcd
+cd
+lfcd
+cddd
+git status
+git add .
+git commit -m "new tmux system"
+git push -u origin mac
+c
+ls
+screen -t
+screen -t scout
+ta
+nano
+alias nano
+alias nano=nvim
+nano
+ls
+ll
+lf
+$TMUX
+echo $TMUX
+echo $screen
+echo $SCREEN
+e .zshrc
+lf
+echo $TERM
+ta
+e .zshrc
+alias e
+alias e=nvim
+lf
+nano .zshrc
+nano .zshrc
+lfcd
+e init.vim
+c
+ta
+c
+ta
+alias
+tks
+ta
+tks
+nvim ~/.zshrc
+ta
+c
+ta
+tks
+ta
+tks
+cd
+screen
+screen ls
+screen -h
+screen -ls
+screen -r
+screen -ls
+screen -t scout
+screen -ls
+screen -xS scout
+screen -S
+screen -S scout
+screen -ls
+screen -r socut
+screen -r scout
+screen -r scout
+screen -wipe
+screen -wipe 94630.ttys000.khq-7095
+screen -ls | grep '(Detached)' | awk '{print $1}' | xargs -I % -t screen -X -S % quit
+screen -ls
+screen -S scout
+screen -S lava
+screen -S strato
+screen -ls
+screen -r scout
+screen -r lava
+screen -r strato
+screen -r strato
+nvim .zshrc
+nvim
+screen -r strato
+lfcd
+cd
+screen -r strato
+lfcd
+lfcd
+brew install screen
+screen -ls
+screen -r strato
+screen -r strato
+cd
+nvim .zshrc
+cd .config/shell
+nvim aliasrc
+cd
+screen -ls
+screen -S strato
+cd dotfiles
+cd
+source .bash_aliases
+sg
+screen -ls
+screen -r strato
+nvim .zshrc
+lfcd
+screen -ls
+cd
+sg
+source .bash_aliases
+sg
+sg
+c
+sg
+c
+ssh ocisly
+ssh ocisly
+sg
+source .bash_aliases
+sg
+c
+ssh belegaer
+ssh belegaer
+cd dotfiles
+git status
+cat .config/zsh/zshrc
+cat .config/zsh/.zshrc
+sg
+source ~/.bash_aliases
+cd .config/shell/
+e aliasrc
+cd
+source .zshrc
+c
+sg
+sg
+e .zshrc
+e .zprofile
+source .zshrc
