@@ -76,13 +76,6 @@ export PATH=$PATH:~/.local/bin/
 ln -sf ~/.config/tmux/plugins/ ~/.tmux/plugins
 ln -sf ~/.config/tmux/resurrect ~/.tmux/resurrect
 
-# # #check if .vscode-server is installled
-if [ -d ~/.vscode-server ]; then 
-    # mv ~/.vscode-server/data/Machine/settings.json ~/.old/settings.json
-    # cp ~/.config/vscode/settings.json ~/.vscode-server/data/Machine/settings.json
-    cat ~/.config/vscode/extensions.list | xargs -L 1 code --install-extension
-fi
-
 # #INSTALL PLUGINS FROM SOURCE
 while IFS="" read -r p || [ -n "$p" ]
 do
