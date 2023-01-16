@@ -1459,3 +1459,12 @@ sg
 e .zshrc
 e .zprofile
 source .zshrc
+git status
+cd dotfiles
+ls
+git status
+git commit -m "alias updates"
+git add .
+git commit -m "alias updates"
+git push -u origin mac
+sg
