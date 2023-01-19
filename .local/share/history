@@ -1091,3 +1091,104 @@ alias e
 source .zshrc
 e
 e
+cd code/dotfiles
+git status
+git restore .local
+git pull
+git branch
+c
+cd .config/nvim
+e
+e init.vim
+ls
+cddd
+status
+git status
+git fetch
+git pull
+git branch -b lua
+git checkout -b lua
+git branch
+git pull mac
+c
+ls
+cd .config/nvim
+ls
+touch init.lua
+ls
+mv init.vim backup.miv
+nvim
+nvim
+nvim
+nvim
+nvim
+nvim
+nvim
+nvim
+lfcd
+source .bash_aliases
+nvim --version
+sudo apt update && sudo apt install neovim
+sudo apt upgrade
+sudo apt remove nvim
+sudo apt remove neovim
+sudo apt install nvim
+sudo apt install neovim
+c
+ta
+tks
+ta
+tks
+ta
+ta
+c
+ta
+ta
+ta
+sudo apt remove neovim
+echo $EDITOR
+lfcd
+e lfrc
+lfcd
+source ~/.bash_aliases
+lfcd
+lfcd
+lfcd
+lfcd
+nvim
+nvim
+lfcd
+nvim lfrc
+cd ../local/bin
+cd
+cd ./local/bin
+cd .local/bin
+ls
+lfcd
+./squashfs-root/AppRun --version\
+
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage\
+
+rm nvim.appimage
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage\
+
+chmod u+x nvim.appimage\
+
+ls
+./nvim.appimage --appimage-extract\
+
+ls
+sudo ln -s squashfs-root/AppRun /usr/bin/nvim
+lfcd
+nvim
+lf
+sudo ln -s squashfs-root/AppRun ~/.local/bin/nvim
+rm /usr/bin/nvim
+sudo rm /usr/bin/nvim
+ls
+cd
+e .bash_aliases
+which nvim
+nvim
+lfcd
+lfcd
