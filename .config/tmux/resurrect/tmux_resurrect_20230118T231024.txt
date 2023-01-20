@@ -1,0 +1,20 @@
+pane	DEV	0	1	:*	0	:/root	:/home/bobbyd	1	zsh	:
+pane	DEV	0	1	:*	1	commander	:/home/bobbyd	0	zsh	:
+pane	DEV	0	1	:*	2	commander	:/home/bobbyd	0	zsh	:
+pane	DEV	1	0	:	0	commander	:/home/bobbyd	1	zsh	:
+pane	DEV	1	0	:	1	commander	:/home/bobbyd	0	zsh	:
+pane	DEV	1	0	:	2	commander	:/home/bobbyd	0	zsh	:
+pane	DEV	1	0	:	3	commander	:/home/bobbyd	0	zsh	:
+pane	DEV	2	0	:-	0	commander	:/home/bobbyd	1	zsh	:
+pane	DEV	2	0	:-	1	commander	:/home/bobbyd	0	zsh	:
+pane	DEV	2	0	:-	2	commander	:/home/bobbyd	0	zsh	:
+pane	DEV	2	0	:-	3	commander	:/home/bobbyd	0	zsh	:
+pane	DOCKER	0	1	:*	0	commander	:/home/bobbyd	1	zsh	:
+pane	FILES	0	1	:*	0	commander	:/home/bobbyd	0	zsh	:
+pane	FILES	0	1	:*	1	commander	:/home/bobbyd	1	zsh	:
+window	DEV	0	:main	1	:*	92d1,362x95,0,0{181x95,0,0,1,180x95,182,0[180x47,182,0,3,180x47,182,48,4]}	off
+window	DEV	1	:sec	0	:	df91,362x95,0,0[362x47,0,0{181x47,0,0,5,180x47,182,0,6},362x47,0,48{181x47,0,48,7,180x47,182,48,8}]	off
+window	DEV	2	:third	0	:-	cfbc,362x95,0,0[362x47,0,0{181x47,0,0,9,180x47,182,0,10},362x47,0,48{181x47,0,48,11,180x47,182,48,12}]	off
+window	DOCKER	0	:zsh	1	:*	65d2,362x95,0,0,13	:
+window	FILES	0	:zsh	1	:*	f12b,362x95,0,0[362x47,0,0,14,362x47,0,48,15]	:
+state	DEV	DOCKER
