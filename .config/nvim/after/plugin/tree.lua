@@ -1,7 +1,7 @@
 -- empty setup using defaults
 require("nvim-tree").setup({
-    ignore_buffer_on_setup = true,
-    open_on_setup = true,
+    -- ignore_buffer_on_setup = true,
+    -- open_on_setup = true,
     sort_by = "case_sensitive",
     view = {
         adaptive_size = true,
@@ -19,3 +19,10 @@ require("nvim-tree").setup({
     },
 })
 
+
+
+vim.keymap.set('n','ZX', function()
+    vim.cmd('NvimTreeClose')
+    vim.cmd('bdelete')
+--    vim.cmd('NvimTreeOpen')
+  end)

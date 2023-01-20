@@ -22,7 +22,6 @@ dap.adapters.python = {
   args = { '-m', 'debugpy.adapter' };
 }
 
-local dap = require('dap')
 dap.configurations.python = {
   {
     -- The first three options are required by nvim-dap
@@ -56,7 +55,7 @@ map('n', '<F5>', [[:lua require'dap'.continue()<CR>]], {})
 -- Press CTRL + b to toggle regular breakpoint
 map('n', '<C-b>', [[:lua require'dap'.toggle_breakpoint()<CR>]], {})
 -- Press CTRL + B to toggle Breakpoint with Condition
-map('n', '<C-B>', [[:lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint Condition: '))<CR>]], {})
+map('n', '<C-c>', [[:lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint Condition: '))<CR>]], {})
 -- Press CTRL + p to toggle Logpoint
 map('n', '<C-p>', [[:lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log Point Msg: '))<CR>]], {})
 -- Pressing F10 to step over
