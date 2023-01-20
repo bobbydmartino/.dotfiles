@@ -26,3 +26,4 @@ vim.keymap.set('n','ZX', function()
     vim.cmd('bdelete')
 --    vim.cmd('NvimTreeOpen')
   end)
+

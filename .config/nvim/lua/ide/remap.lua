@@ -19,4 +19,5 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 --remove capital Q
 vim.keymap.set("n","Q","<nop>")
 
-
+--format json
+vim.keymap.set("n","<leader>js", [[:%!python -m json.tool<CR>]],{})
