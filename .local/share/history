@@ -206,3 +206,16 @@ git pull
 git add .
 git commit -m "new system"
 git push -u origin main
+c
+cd code/dotfiles
+touch packer.sh
+chmod +x packer.sh
+e packer.sh
+git add .
+git commit -m "packer.sh added"
+ls
+e packer.sh
+mv packer.sh .config/nvim
+git add .
+git commit -m "added appimage extract"
+git push -u origin main
