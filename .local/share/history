@@ -261,3 +261,25 @@ cddd
 git add .
 git commit -m "packer bootstrap added"
 git push -u origin main
+c
+cd code/dotfiles/o
+cd code/dotfiles/
+ls
+cd .config/nvim
+ls
+cd lua
+la
+ls
+cdd
+e init.lua
+touch packer.sh
+chmod +x packer.sh
+e packer.sh
+cd lua/ide
+ls
+e init.lua 
+cdddd
+cdd
+git add . 
+git commit -m "retrying packer bootstrap"
+git push -u origin main
