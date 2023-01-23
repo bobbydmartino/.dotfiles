@@ -196,3 +196,13 @@ youtube-dl -a files.txt
 ta
 c
 ta
+cd code/dotfiles/
+ls
+c
+git status
+git pull
+git restore .config/shell/aliasrc
+git pull
+git add .
+git commit -m "new system"
+git push -u origin main
