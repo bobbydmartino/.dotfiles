@@ -123,3 +123,76 @@ fg
 fg
 fg
 c
+ls
+ta
+c
+ta
+ta
+fg
+cd vids
+nvim jitznotes.txt
+ls
+nvim jitznotes.txt
+cat files.txt
+e files
+ls
+e files.txt
+e files2.txt
+cat files.txt
+cat files2.txt
+cdd
+ls
+cd code
+ls
+cd lifedocker
+ls
+cat docker-compose.yml
+cdd
+ls
+cd media
+cd lifedocker/media
+ls
+cdd
+cd downloads/
+ls
+cdd
+cddd
+ls
+cd code
+ls
+cdd
+cd vids
+ls
+ls
+rm Shaolin\ No\ Gi\ Sweep-hCTd7rTjA5A.webm
+e files.txt
+e files.txt
+cdd
+cd .config/nvim
+ls
+e
+e
+e
+e
+cd vids
+nvim files.txt
+nvim files.txt
+nvim files.txt
+nvim files2.txt
+ls
+ls
+du -sh .
+du -sh .
+ls
+cat files.txt
+c
+ll
+ls -alh
+ll
+youtube-dl -a files2.txt
+youtube-dl -a files2.txt
+youtube-dl -a files.txt
+youtube-dl -a files.txt
+ta
+c
+ta
