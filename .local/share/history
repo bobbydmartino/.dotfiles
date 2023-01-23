@@ -219,3 +219,45 @@ mv packer.sh .config/nvim
 git add .
 git commit -m "added appimage extract"
 git push -u origin main
+cd
+c
+cd code/dotfiles/
+ls
+cd .config/nvim
+ls
+rm packer.sh
+e init.lua
+ls
+cd lua
+ls
+mkdir bootstrap
+cd bootstrap
+touch bootstrap.lua
+e bootstrap.lua
+cddd
+e init.lua
+nvim
+cd lua/bootstrap
+ls
+e bootstrap.lua
+cdd
+cdd
+ls
+e init.lua
+e init.lua
+ls
+mv lua/bootstrap/bootstrap.lua .
+rm -rf lua/bootstrap
+ls
+e init.lua
+e init.lua
+e init.lua
+ls
+mv bootstrap.lua lua
+e init.lua
+sl
+ls
+cddd
+git add .
+git commit -m "packer bootstrap added"
+git push -u origin main
