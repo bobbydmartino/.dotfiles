@@ -8,7 +8,7 @@ plugins/
 .local/share/lf/files/
 
 squashfs-root
-
+nvm
 # vim autoload
 autoload
 .local/share/nvim
