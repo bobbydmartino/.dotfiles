@@ -53,6 +53,7 @@ is_installed() {
     else
         echo "false"
     fi
+  fi
 }
 
 write_to_yaml() {
