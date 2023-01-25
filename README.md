@@ -7,7 +7,7 @@ My dotfiles is a collection of configuration files that I use to personalize my 
 To install the dotfiles, you can use the following command:  
 `curl -L -o oneliner.sh shorturl.at/cefJ1 && chmod +x oneliner.sh && ./oneliner.sh`
 
-This command will automatically install the dotfiles for you, and it's compatible with different operating system.
+This command will automatically install the dotfiles for you, and it's compatible with different operating systems.
 
 Please note that the installation process will replace your current `.zshrc`, `.zprofile`, `.tmux.conf` files with symbolic links to the corresponding files in this repository. It will also create symbolic links to `.config` and `.local` in your home directory.
 
