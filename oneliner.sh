@@ -32,7 +32,7 @@ fi
 
 # touch .df_backup.yaml and bash aliases
 mkdir -p ~/.dotfiles_backup
-touch .bash_aliases
+touch ~/.bash_aliases
 touch ~/.dotfiles_backup/.backup.yaml
 
 # add system type to .dotfiles.yaml
