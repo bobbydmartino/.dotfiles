@@ -73,7 +73,7 @@ done < $PWD/dotfiles/.config/pluginlist/.packagelist
 while read line; do
   package=$(echo $line | cut -d ":" -f 1)
   installed=$(echo $line | cut -d ":" -f 2)
-  if [ $installed = " false" ]; then
+  if [ $installed = "false" ]; then
     if [ $system = "docker" ]; then
       apt install -y $package
     elif [ $system = "linux" ]; then
@@ -84,7 +84,7 @@ while read line; do
       echo "The package $package needs to be installed, please ask your system administrator to install it."
     fi
   else
-    echo $package
+    echo $package $installed
   fi
 done < ~/.dotfiles_backup/.backup.yaml
 
