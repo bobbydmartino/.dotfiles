@@ -83,6 +83,8 @@ while read line; do
     elif [ $system = "linuxnosudo" ]; then
       echo "The package $package needs to be installed, please ask your system administrator to install it."
     fi
+  else
+    echo $package
   fi
 done < ~/.dotfiles_backup/.backup.yaml
 
