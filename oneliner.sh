@@ -101,13 +101,13 @@ ln -sf $PWD/.config ~/.config
 
 touch ~/.cache/history
 
-ln -sf ~/.config/shell/profile ~/.zprofile
-ln -sf ~/.config/zsh/.zshrc ~/.zshrc
-ln -sf ~/.config/tmux/.tmux.conf ~/.tmux.conf
+ln -sf $PWD/.config/shell/profile ~/.zprofile
+ln -sf $PWD/.config/zsh/.zshrc ~/.zshrc
+ln -sf $PWD/.config/tmux/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.tmux/
 export PATH=$PATH:~/.local/bin/ 
-ln -sf ~/.config/tmux/plugins/ ~/.tmux/plugins
-ln -sf ~/.config/tmux/resurrect ~/.tmux/resurrect
+ln -sf $PWD/.config/tmux/plugins/ ~/.tmux/plugins
+ln -sf $PWD/.config/tmux/resurrect ~/.tmux/resurrect
 
 # install plugins script
 while IFS="" read -r p || [ -n "$p" ]
