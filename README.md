@@ -75,7 +75,7 @@ The plugins I use are:
 - [`vimwiki`](https://github.com/vimwiki/vimwiki) for notes
 - [`nvim-tree`](https://github.com/jianjunjiu/nvim-tree) for navigation (use Ctrl-n to toggle)
 - [`bufferline`](https://github.com/akinsho/bufferline.nvim) for adding a more sublime feel (pun intended) use H and L to toggle between them
-- [`theprimeagen/harpoon`](https://github.com/theprimeagen/harpoon) for better navigation and file management.
+- [`harpoon`](https://github.com/theprimeagen/harpoon) for better navigation and file management.
 - [`telescope`](https://github.com/nvim-lua/telescope.nvim) for fuzzy finding
 - [`copilot`](https://github.com/nvim-lua/copilot.nvim) for AI-assisted coding.
 - [`nvim-dap`](https://github.com/mfussenegger/nvim-dap) and [`nvim-dap-ui`](https://github.com/mfussenegger/nvim-dap-ui) for debugging.
