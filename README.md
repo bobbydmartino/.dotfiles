@@ -1,5 +1,4 @@
-# My Dotfiles Documentation
-###### (written by ChatGPT)
+# My Dotfiles Documentation ###### (written by ChatGPT so some of the links may have been hallucinated)
 
 My dotfiles is a collection of configuration files that I use to personalize my development environment. It includes my `.zshrc`, `.zprofile`, `.tmux.conf`, and others.
 
@@ -80,7 +79,7 @@ The plugins I use are:
 - [`nvim-dap`](https://github.com/mfussenegger/nvim-dap) and [`nvim-dap-ui`](https://github.com/mfussenegger/nvim-dap-ui) for debugging.
 - [`tagbar`](https://github.com/majutsushi/tagbar) for navigating large files
 - [`lsp-zero`](https://github.com/lsp-zero/lsp-zero) for handling autocomplete (makes it super easy)
-- Aesthetic plugins are [`vim-airline`](https://github.com/vim-airline/vim-airline) and [`awesome-vim-colorschemes`](https://github.com/rafi/awesome-vim-colorschemes
+- Aesthetic plugins are [`vim-airline`](https://github.com/vim-airline/vim-airline) and [`awesome-vim-colorschemes`](https://github.com/rafi/awesome-vim-colorschemes)
 
 Please see the plugin folder in `.config/nvim/after/plugin` for the specific configurations of each of these plugins.
 Please note that you may need to install the plugins and dependencies mentioned in this section in order for the neovim to work properly.
