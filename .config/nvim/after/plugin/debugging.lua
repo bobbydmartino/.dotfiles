@@ -64,8 +64,6 @@ map('n', '<F10>', [[:lua require'dap'.step_over()<CR>]], {})
 map('n', '<F11>', [[:lua require'dap'.step_into()<CR>]], {})
 -- Pressing F12 to step out
 map('n', '<F12>', [[:lua require'dap'.step_out()<CR>]], {})
--- Press F6 to open REPL
-map('n', '<F6>', [[:lua require'dap'.repl.open()<CR>]], {})
 -- Press dl to run last ran configuration (if you used f5 before it will re run it etc)
 map('n', '<leader>dl', [[:lua require'dap'.run_last()<CR>]], {})
 

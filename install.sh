@@ -33,6 +33,8 @@ write_to_yaml git
 write_to_yaml zathura
 write_to_yaml mpv 
 write_to_yaml python3-pip
+write_to_yaml python3-venv
+write_to_yaml unzip
 write_to_yaml trash-cli
 write_to_yaml neofetch
 write_to_yaml graphicsmagick
