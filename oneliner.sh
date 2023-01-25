@@ -48,14 +48,7 @@ is_installed() {
         echo "false"
     fi
   else
-    # Use the 'dpkg-query' command to check if the package is installed on Linux
-    # if dpkg-query -W -f='${Status}' $1 2>/dev/null | grep -q "ok installed"; then
-    # if dpkg -s "$1" &> /dev/null && echo "true" || echo "false"; then
     dpkg -s "$1" &> /dev/null && echo "true" || echo "false"
-        # echo "true"
-    # else
-        # echo "false"
-    # fi
   fi
 }
 
