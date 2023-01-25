@@ -1,0 +1,39 @@
+ssh -T git@github.com
+docker exec -it ml_base_test_1
+docker exec -it ml_base_test_1 /bin/bash
+dps
+cd code/dotfiles/o
+cd code/dotfiles/
+ls
+e install.sh
+cd .config
+ls
+cd pluginlist
+ls
+ll
+rm backup.yaml
+rm drop.avi
+touch .packagelist
+e .packagelist
+c
+noremap <Leader>y "*y
+c
+c
+c
+cd code/dotfiles
+git status
+e .gitignore
+git status
+git add .gitignore
+git status
+git commit -m "update gitignore"
+git status
+rm -rf .local/share/history
+git status
+git add .
+git status
+git commit -m "delete history and ignore"
+git push -u origin
+c
+ls
+e oneliner.sh
