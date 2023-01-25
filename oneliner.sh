@@ -22,6 +22,7 @@ elif [ $number -eq 2 ]; then
   system="linux"
 elif [ $number -eq 3 ]; then
   system="docker"
+  apt update
 elif [ $number -eq 4 ]; then
   system="linuxnosudo"
 else
