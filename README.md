@@ -1,4 +1,5 @@
-# My Dotfiles
+# My Dotfiles Documentation
+###### (written by ChatGPT)
 
 My dotfiles is a collection of configuration files that I use to personalize my development environment. It includes my `.zshrc`, `.zprofile`, `.tmux.conf`, and others.
 
