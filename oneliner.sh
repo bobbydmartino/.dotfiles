@@ -59,9 +59,9 @@ is_installed() {
 write_to_yaml() {
     package=$1
     if is_installed $package; then
-        echo "$package: true" >> ~/.dotfiles_backup/.backup.yaml
+        echo "$package:true" >> ~/.dotfiles_backup/.backup.yaml
     else
-        echo "$package: false" >> ~/.dotfiles_backup/.backup.yaml
+        echo "$package:false" >> ~/.dotfiles_backup/.backup.yaml
     fi
 }
 
