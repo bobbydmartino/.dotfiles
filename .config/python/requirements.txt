@@ -1,4 +1,0 @@
-#pudb
-#ipython
-#nbterm
-#ueberzug
