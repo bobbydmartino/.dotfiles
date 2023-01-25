@@ -96,18 +96,18 @@ done < ~/.dotfiles_backup/.backup.yaml
 [ ! -d ~/.tmux ] || mv ~/.tmux ~/.dotfiles_backup/.tmux
 
 # link all dotfiles from repo to home directory
-ln -sf $PWD/.local ~/.local
-ln -sf $PWD/.config ~/.config
+ln -sf $PWD/dotfiles/.local ~/.local
+ln -sf $PWD/dotfiles/.config ~/.config
 
 touch ~/.cache/history
 
-ln -sf $PWD/.config/shell/profile ~/.zprofile
-ln -sf $PWD/.config/zsh/.zshrc ~/.zshrc
-ln -sf $PWD/.config/tmux/.tmux.conf ~/.tmux.conf
+ln -sf $PWD/dotfiles/.config/shell/profile ~/.zprofile
+ln -sf $PWD/dotfiles/.config/zsh/.zshrc ~/.zshrc
+ln -sf $PWD/dotfiles/.config/tmux/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.tmux/
 export PATH=$PATH:~/.local/bin/ 
-ln -sf $PWD/.config/tmux/plugins/ ~/.tmux/plugins
-ln -sf $PWD/.config/tmux/resurrect ~/.tmux/resurrect
+ln -sf $PWD/dotfiles/.config/tmux/plugins/ ~/.tmux/plugins
+ln -sf $PWD/dotfiles/.config/tmux/resurrect ~/.tmux/resurrect
 
 # install plugins script
 while IFS="" read -r p || [ -n "$p" ]
