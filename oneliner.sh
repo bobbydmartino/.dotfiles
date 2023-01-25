@@ -57,16 +57,12 @@ is_installed() {
 }
 
 write_to_yaml() {
-  package=$1
-  if [ -f "~/.dotfiles_backup/.backup.yaml" ]; then
+    package=$1
     if is_installed $package; then
-      echo "$package: true" >> ~/.dotfiles_backup/.backup.yaml
+        echo "$package: true" >> ~/.dotfiles_backup/.backup.yaml
     else
-      echo "$package: false" >> ~/.dotfiles_backup/.backup.yaml
+        echo "$package: false" >> ~/.dotfiles_backup/.backup.yaml
     fi
-  else
-    echo "File ~/.dotfiles_backup/.backup.yaml not found"
-  fi
 }
 
 while read package; do
