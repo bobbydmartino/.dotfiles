@@ -10,6 +10,8 @@ To install the dotfiles, you can use the following command:
 
 This command will automatically install the dotfiles for you, and it's compatible with different operating systems.
 
+If you are installing this into a development docker container then run the above command in `~/` or suffer the consequences
+
 Please note that the installation process will replace your current `.zshrc`, `.zprofile`, `.tmux.conf` files with symbolic links to the corresponding files in this repository. It will also create symbolic links to `.config` and `.local` in your home directory.
 
 After the installation, you can start using the dotfiles by opening a new terminal window or running `source ~/.zshrc`.
