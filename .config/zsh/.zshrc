@@ -41,6 +41,10 @@ lfcd () {
 }
 bindkey -s '^o' 'lfcd\n'
 
+# Handle Docker autocomplete
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
 
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then

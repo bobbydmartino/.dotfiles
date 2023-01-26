@@ -37,3 +37,228 @@ git push -u origin
 c
 ls
 e oneliner.sh
+\:w
+cd code/dotfiles
+ls
+e install.sh
+c
+e install.sh
+lfcd
+e plugins.lua
+cd ../..
+cd ../..
+ls
+chmod +x oneliner.sh
+ls
+e oneliner.sh
+git add .
+git status
+git commit -m "install script written"
+git push -u origin main
+c
+cd ..
+ls
+cd ml_base
+dps
+docker-compose down
+docker-compose up -d --build
+dps
+docker exec -it ml_base_test_1
+docker exec -it ml_base_test_1 /bin/bash
+docker-compose down
+docker-compose up -d --build
+docker exec -it ml_base_test_1 /bin/bash
+docker-compose down
+docker-compose up -d --build
+docker exec -it ml_base_test_1 /bin/bash
+docker-compose down
+docker-compose up -d --build
+docker exec -it ml_base_test_1 /bin/bash
+docker-compose down
+docker-compose up -d --build
+docker exec -it ml_base_test_1 /bin/bash
+docker-compose down
+docker-compose up -d --build
+docker exec -it ml_base_test_1 /bin/bash
+docker-compose down
+docker-compose up -d --build
+docker exec -it ml_base_test_1 /bin/bash
+docker-compose down
+docker-compose up -d --build
+docker exec -it ml_base_test_1 /bin/bash
+docker-compose down
+docker-compose up -d --build
+docker exec -it ml_base_test_1 /bin/bash
+lfcd
+ls
+e docker-compose.yml
+ee
+e docker-compose.yml
+c
+ls
+echo $NVM_DIR
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash\
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm install v16
+e
+cd code/ml_base
+ls
+cd src
+touch test.py
+cd ..
+sudo chmod -R +rw src 
+cd src
+touch test.py
+cd ..
+sudo chmod -R 777 src
+cd src
+touch test.py
+e test.py
+e test.py
+cd ..
+git status
+git add .
+git commit -m "updates"
+git push -u origin master
+git remote
+git remote origin
+git remote remove
+git remote remove origin
+git remote add origin git@github.com:bobbydmartino/ml_base.git
+git status
+git push -u origin master
+cdd
+cd dotfiles
+git status
+git add .
+e .gitignore
+git status
+git add .
+git status
+git commit -m "packer copilot updates"
+git push -u origin main
+git pull
+git merge
+git status
+git push -u origin main
+e .gitignore
+git add .
+git commit -m "gitignore"
+git push -u origin main
+e .gitignore
+git pull
+ls
+cd .config
+ls
+rm nvm
+rm -rf nvm
+git status
+git add .
+git commit -m "remove nvm"
+git push -u origin main
+cd 
+cd .config
+ls
+mkdir nvm
+cd 
+cd code/dotfiles
+git status
+cd .config
+l
+ls
+rm -rf nvm
+cd ..
+ls
+ta
+ta
+docker exec -it ml_base_test_1
+docker exec -it ml_base_test_1 /bin/bash
+ta
+e
+cdd
+ls
+lfcd
+ls
+gs
+git add .
+git pull
+c
+git status
+git commit -m "update models"
+git push -u origin main
+c
+ls
+e
+ta
+dps
+cd ..
+cd ml_base
+ls
+cd ../strato
+ls
+cd excel
+ls
+cd newyears
+ls
+cd ..
+rm -rf 1956 1957 1958 1959 1960 newyears
+c
+ls
+cat scraper.ipynb
+c
+cd ..
+ls
+mv ~/QB\ Sheets-20230125T230925Z-001.zip excel
+cd
+cd code/strato
+ls
+c
+ls
+cd excel
+ls
+unzip QB\ Sheets-20230125T230925Z-001.zip
+ls
+cd QB\ Sheets
+ls
+cd PASS
+ls
+cd ../RUN
+ls
+cd ..
+cd ../..
+ls
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes\
+
+docker exec -it strato_strato_1 /bin/bash
+e docker-compose.dev.yml 
+docker-compose down
+docker-compose -f docker-compose.dev.yml down
+ls
+mv docker-compose.yml docker-compose.master.yml
+ln -sf docker-compose.dev.yml docker-compose.yml
+docker-compose up -d
+dps
+ls
+e docker-compose.dev.yml 
+cd backend
+ls
+cd ../strato/
+ls
+cdd
+ls
+cd backend/l
+cd backend/
+ls
+cd server
+ls
+cat loaddata
+ls
+cd api
+ls
+cd fixtures
+ls
+e teams.json
