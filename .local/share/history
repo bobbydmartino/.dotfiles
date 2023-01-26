@@ -1468,3 +1468,177 @@ git add .
 git commit -m "alias updates"
 git push -u origin mac
 sg
+ls
+cd dotfiles
+e .gitignore
+git add .
+git commit -m "wip"
+git push -u origin mac
+sg
+ssh ocisly
+ssh ocisly
+ssh belegaer
+c
+ls
+ssh ocisly
+ssh belegaer
+c
+source .zshrc
+sg
+c
+sg
+lf
+sg
+sg
+e .zshrc
+ls -al
+ll
+c
+ls
+e .zshrc
+c
+ls
+e .zshrc
+lf
+sg
+sg
+c
+sg
+sg
+ssh belegaer
+ssh belegaer
+ls
+c
+sg
+sg
+cd dotfiles
+git status
+e .gitignore
+cd .config/iterm2
+ls
+cd ..
+git add iterm2
+git status
+ssh belegaer
+brew install mackup
+mackup backup
+mackup -h
+mkdir Dropbox
+mackup backup
+touch .mackup.cfg
+e marbletest_8
+e .mackup.cfg
+mkdir mackup_storage
+e .mackup.cfg
+mackup backup
+e .mackup.cfg
+mackup backup
+ls
+cd mackup_storage
+ks
+ls
+cd Mackup
+ls
+cd Library
+ls
+cd Preferences
+ls
+rm org.dolphin-emu.dolphin.plist
+cddd
+cd .config
+ls
+cdd
+ls
+cd .ssh
+ls
+cdd
+cdd
+cdd
+rm -rf marbletest_8*
+c
+ls
+rm NestedFilter_*
+c
+ls
+rm 1956.xlsx
+rm -rf Dropbox
+rm Experiment_confusion_matrix.png
+rm bookmarks_5_29_22.html
+rm and accuracies_by_aircraft.csv accuracies_by_feature.csv confusion_matrix.csv meta:name meta:name.pth pico.save 
+ls
+ll
+rm -rf tmpims test_770.png run_tracker.sh mount.sh meta:name/ good_lime_v0.5.2.mscoco_test.json good_lime_v0.5.2.mscoco_train.json good_lime_v0.5.2.mscoco_vali.json experiment4_confusion_matrix.png etegent_pipeline_outputs_exp001_keypoint_filtered_pred_kpts_template_preds_hamming.json docker-compose.uidev.yml docker-compose.yml VirtualBox\ VMs Dockerfile Dockerfile.api Dockerfile.dev 
+c
+ls
+cd mackup_storage
+ls
+ll
+cd Mackup
+ls
+ll
+cat .zshrc
+c
+ll
+cd Library
+ls
+ll
+cd Application\ Support
+ls
+ll
+cdd
+ll
+cd Preferences
+ll
+cat com.apple.Terminal.plist
+c
+cd
+sg
+ls
+cd Downloads
+ls
+ls | grep mp4
+sftp grundy
+sg
+c
+sg
+sg
+sg
+c
+ssh belegaer
+sg
+sg
+sg
+ssh belegaer
+l
+ll
+wormhole send mackup_storage
+sg
+sg
+sg
+cd Downloads
+wormhole send imryrr1-UDP4-1194-VPN-config.ovpn janus-UDP4-1194-VPN-config.ovpn 
+wormhole send imryrr1-UDP4-1194-VPN-config.ovpn 
+wormhole send janus-UDP4-1194-VPN-config.ovpn
+cd .ssh
+ls
+cat grundy_rsa.pub
+wormhole send grundy_rsa grundy_rsa.pub 
+wormhole send grundy_rsa*
+wormhole send grundy_rsa
+wormhole send grundy_rsa.pub
+sg
+cd
+ssh belegaer
+c
+sg
+sg
+cd Downloads
+sftp grundy
+ls | grep QB
+sftp grundy
+which nvim
+nvim --version
+sg
+sg
+sg
+c

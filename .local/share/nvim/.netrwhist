@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/robert.martino/marbletest_8'
 let g:netrw_dirhist_7='/Users/robert.martino/dotfiles/.config/nvim'
 let g:netrw_dirhist_6='/Users/robert.martino/dotfiles/.config'
 let g:netrw_dirhist_5='/Users/robert.martino/dotfiles'
