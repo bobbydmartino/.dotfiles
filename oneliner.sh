@@ -143,6 +143,4 @@ mkdir -p ~/.virtualenvs
 python3 -m venv ~/.virtualenvs/debugpy
 ~/.virtualenvs/debugpy/bin/python -m pip install -U debugpy
 
-# make sure packer installs
-
-exec zsh
+echo exec zsh >> ~/.bashrc
