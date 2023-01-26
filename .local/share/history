@@ -262,3 +262,263 @@ ls
 cd fixtures
 ls
 e teams.json
+c
+ls
+cd code/strato
+ls
+dps
+cd backend
+mv ../excel .
+ls
+cd ..
+ls
+cd strato
+ls
+cd game
+ls
+cd ..
+ls
+cd gui
+ls
+cd ..
+ls
+cd teams
+ls
+cd 1958
+ls
+cd ../..
+ls
+mv teams ../backend
+mv future ../backend
+ls
+cd strato_project/a
+cd strato_project/
+ls
+cdd
+ls
+cd Doc
+ls
+cd misc
+ls
+cdd
+cd Notebooks
+ls
+cdd
+cd TO_BE_SCRAPED
+ls
+cddd
+ls
+cdd
+ls
+mv strato backend/misc
+ls
+cd docker
+ls
+cd backend
+ls
+cddd
+ls
+cd backend
+ls
+mkdir data
+mv misc data
+mv excel data
+mv teams data
+mv future data
+ls
+cd data
+ls
+cddd
+cd 
+e .zshrc
+cd code/strato
+source ~/.zshrc
+docker exec -it strato_strato_1 /bin/bash
+c
+docker-compose down
+docker-compose up -d
+docker exec -it strato_strato_1 /bin/bash
+ls
+cd backend
+ls
+e Dockerfile
+cd ..
+docker-compose up -d --build
+docker exec -it strato_strato_1 /bin/bash
+docker-compose up -d
+docker-compose down
+docker-compose up -d --build
+docker exec -it strato_strato_1 /bin/bash
+ls
+cd backend
+ls
+mv fx ~/.local/bin
+cd data/teams/1965/CLE
+fx 1965CLE.json
+cd
+cd code/dotfiles
+ls
+git status
+git pull
+git add .
+git commit -m "add fx functionality prebuilt"
+git push -u origin main
+docker exec -it strato_strato_1 /bin/bash
+cd code/dotfiles/
+git pull
+lfcd
+cddd
+git restore .local/bin/rotdir
+lfcd
+cddd
+git status
+git restore .local/bin/
+git restore .config/lf/lfrc
+git status
+lfcd
+mpv
+ls
+cd
+ls
+cd code
+ls
+cd legacy
+ls
+cd YOGA
+ls
+cd New\ 10\ in\ 10
+ls
+mpv quads.mp4
+cd
+cd .config
+ls
+cd
+lfcd
+ls
+viu 640px-PNG_transparency_demonstration_1.png
+c
+ls
+lfcd
+wget https://media0.giphy.com/media/gw3IWyGkC0rsazTi/giphy.gif?cid=790b76114cd2cd204c12ab891c6539bf85d38ce53d3b80dd&rid=giphy.gif
+wget 'https://media0.giphy.com/media/gw3IWyGkC0rsazTi/giphy.gif?cid=790b76114cd2cd204c12ab891c6539bf85d38ce53d3b80dd&rid=giphy.gif'
+ls
+lfcd
+wget 'https://sample-videos.com/gif/3.gif'
+ls
+lfcd
+viu 3.gif
+fg
+c
+ls
+lfcd
+lfcd
+batcat 3.gif
+cat 3.gif
+c
+pip3 install --user gif-for-cli
+ls
+cd
+ls
+cd .local/bin
+ls
+gif-for-clo
+gif-for-cli
+gif-for-cli 3.gif
+c
+lfcd
+lfcd
+pip3 uninstall gif-for-cli
+c
+ls
+lfcd
+cd
+lfcd
+cd
+lfcd
+lfcd
+sudo apt install jq
+jq . < 1974ATL.json
+lfcd
+cd
+c
+lfcd
+cd
+cd code/strato/backend/data/future/1974/ATL
+ls
+lfcd
+cd
+cd .local/bin
+lfcd
+sudo apt remove jq
+lfcd
+lfcd
+ls
+convert 3.gif -coalesce 3.gif 3.png
+ls
+lfcd
+rm 3-0.png 3-10.png 3-11.png 3-12.png 3-13.png 3-14.png 3-15.png 3-16.png 3-17.png 3-18.png 3-19.png 3-1.png 3-2.png 3-3.png 3-4.png 3-5.png 3-6.png 3-7.png 3-8.png 3-9.png 
+ls
+convert -coalesce 3.gif 3.png
+ls
+rm 3-*
+ls
+convert -h
+convert -coalesce -flatten 3.gif 3.png
+ls
+lfcd
+lfcd
+lfcd
+cd
+ls
+ll
+lfcd
+lfcd
+cd ~/.cache
+mkdir lf
+cd ../.local/bin
+lfcd
+cd
+cd code/dotfiles/
+e oneliner.sh
+git status
+git pull
+cd
+lfcd
+cd 
+ls
+cd code
+ls
+cd legacy/Y
+cd legacy/YOGA
+ls
+cd New\ 10\ in\ 10
+ls
+convert -coalesce -flatten back.mp4
+convert -h
+gs
+cd
+lfcd
+c
+ls
+cd .local/bin
+ls
+imgcat
+pip install imgcat
+imgcat 640px-PNG_transparency_demonstration_1.png
+ta
+lfcd
+ls
+lfcd
+lfcd
+lfcd
+lfcd
+cdd
+cdd
+cd .config
+ls
+cd lf
+lfcd
+cd
+cd code/legacy/YOGA/New\ 10\ in\ 10
+c
+mpv --no-config --vo=tct back.mp4

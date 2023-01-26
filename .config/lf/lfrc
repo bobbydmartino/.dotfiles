@@ -14,19 +14,9 @@ set hidden!
 
 cmd open ${{
     case $(file --mime-type "$(readlink -f $f)" -b) in
-	#application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) localc $fx ;;
-        image/vnd.djvu|application/pdf|application/octet-stream|application/postscript) setsid -f zathura $fx >/dev/null 2>&1 ;;
-	text/*|application/json|inode/x-empty) $EDITOR $fx;;
-	image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" |
-		setsid -f sxiv -aio 2>/dev/null | while read -r file; do
-			[ -z "$file" ] && continue
-			lf -remote "send select \"$file\""
-			lf -remote "send toggle"
-		done &
-		;;
-	audio/*) mpv --audio-display=no $f ;;
-	video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
-	application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
+    application/json) fx $fx;;
+	text/*|inode/x-empty) $EDITOR $fx;;
+    image/*) imgcat $fx;;
 	application/pgp-encrypted) $EDITOR $fx ;;
         *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
     esac

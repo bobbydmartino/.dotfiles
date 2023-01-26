@@ -99,6 +99,9 @@ ln -sf $PWD/dotfiles/.config ~/.config
 
 touch ~/.cache/history
 
+# create lf cache
+mkdir -p $HOME/.cache/lf
+
 ln -sf $PWD/dotfiles/.config/shell/profile ~/.zprofile
 ln -sf $PWD/dotfiles/.config/zsh/.zshrc ~/.zshrc
 ln -sf $PWD/dotfiles/.config/tmux/.tmux.conf ~/.tmux.conf
@@ -135,6 +138,7 @@ if [ $(is_installed "nodejs") == "false" ]; then
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
     nvm install v16
 fi
+
 
 # create virtualenv depending on system for dap debugging
 # create the virtualenvs directory
