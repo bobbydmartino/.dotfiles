@@ -124,6 +124,7 @@ done < ~/.config/pluginlist/.pluginlist
 
 # extract nvim image
 cd ~/.local/bin && ./nvim.appimage --appimage-extract
+cd ~
 
 # nvm install nodejs
     # https://computingforgeeks.com/how-to-install-node-js-on-ubuntu-debian/
