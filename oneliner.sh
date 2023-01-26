@@ -84,6 +84,9 @@ while read line; do
   fi
 done < ~/.dotfiles_backup/.backup.yaml
 
+# Install imgcat for using iterm2's image viewing functionality over ssh
+pip install imgcat
+
 
 # add existing conflicting dotfiles to backup and mv to ~/.dotfiles_backup/
 [ ! -d ~/.local ] || mv ~/.local ~/.dotfiles_backup/.local

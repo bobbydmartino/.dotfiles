@@ -12,3 +12,5 @@ python3-pip
 python3-venv
 unzip
 trash-cli
+graphicsmagick
+ffmpegthumbnailer
