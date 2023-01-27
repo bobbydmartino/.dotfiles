@@ -63,13 +63,13 @@ write_to_yaml() {
 if [ $system = "mac" ]; then
     while read package; do
       write_to_yaml "$package"
-    done < $PWD/dotfiles/.config/pluginlist/.mackagelist
+    done < $PWD/dotfiles/.config/install_list/.mackagelist
 else
     # Install imgcat for using iterm2's image viewing functionality over ssh
     pip install imgcat
     while read package; do
       write_to_yaml "$package"
-    done < $PWD/dotfiles/.config/pluginlist/.packagelist
+    done < $PWD/dotfiles/.config/install_list/.packagelist
 fi
 # install what is still needed if possible (unixnosudo print which ones need to be installed and exit)
 while read line; do
@@ -129,7 +129,7 @@ do
   then
           git clone ${arrIN[2]} ".config/${arrIN[0]}/plugins/${arrIN[1]}"
   fi
-done < ~/.config/pluginlist/.pluginlist
+done < ~/.config/install_list/.pluginlist
 
 
 
