@@ -588,3 +588,129 @@ ls
 lfcd
 c
 lfcd
+sg
+ls
+cd ..
+alias ls=ls
+ls
+cp -r ONR-FMV-2017 ~/
+rsync -avP ONR-FMV-2017 ~/ONR-FMV-2017
+cd ONR-FMV-2017
+ls
+ll
+source ~/.zshrc
+c
+ll
+rsync -avP annotations ~/ONR-FMV-2017/annotations
+ll
+ls ~/ONR-FMV-2017
+ls ~/ONR-FMV-2017/ONR-FMV-2017
+du -sh ~/ONR-FMV-2017/ONR-FMV-2017
+ls -al ~/ONR-FMV-2017
+ls
+alias ls=ls
+alias ll="ls -al"
+ls --color=auto --group-directories-first
+ls --color=auto 
+ls
+cd Downloads
+ls --color=auto 
+ls --color=auto 
+cd
+ls
+c
+gls -Flh --group-directories-first
+ls -al | sort -k1 -r
+ls | sort -k1 -r
+ls --color=auto| sort -k1 -r
+ls --color=auto | sort -k1 -r
+ls --color=auto 
+ls -G | sort -k1 -r
+ls -G | sort -r
+ls -G | sort 
+ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep "^l"
+ls -la --color=auto | grep "^d" && ls -la | grep "^-" && ls -la | grep "^l"
+echo $uname
+uname
+cd dotfiles
+git pull
+git restore .local/share/history i
+git restore .local/share/history 
+git restore .config/zsh/zshrc
+git restore .config/zsh/.zshrc
+git pull
+imgcat
+which imgcat
+source ~/.zshrc
+ls
+cat .zshrc
+cd
+cat .zshrc
+git status
+cd dotfiles
+gs
+git status
+git add .
+git status
+git commit -m "shell_integration"
+git push -u origin main
+git pull
+cat ~/.zshrc
+cd
+ll
+ls -al
+alias ls=ls
+ls
+ls -al
+rm -rf mackup_storage
+c
+ls
+ls -al
+cd dotfiles
+./oneliner.sh
+cd ..
+cp dotfiles/oneliner.sh .
+rm -rf dotfiles
+c
+./oneliner.sh
+ls
+source .zshrc
+touch .bash_aliases
+mk .bash_aliases
+ls
+ll
+rm .bash_aliases
+mk .bash_aliases
+e .bash_aliases
+e .bash_aliases
+source .zshrc
+ll
+cd dotfiles
+git status
+cd
+e .zshrc
+cd dotfiles
+git status
+e .gitignore
+git add .
+git status
+git commit -m "update gitignore"
+git config user.email bobbydmartino@gmail.com
+git config user.name bobbydmartino
+git commit -m "update gitignore"
+git push -u origin main
+git status
+git remote remove origin
+git remote add origin git@github.com:bobbydmartino/dotfiles.git
+git status
+git pull
+e .gitignore
+git push -u origin main
+cd
+source .zshrc
+c
+ls
+ll
+lt
+ls
+c

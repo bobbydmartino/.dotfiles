@@ -67,6 +67,7 @@ case `uname` in
     # commands for OS X go here
     alias ls=ls 
     alias ll="ls -al"
+    test -e "${ZDOTDIR}/.iterm2_shell_integration.zsh" && source "${ZDOTDIR}/.iterm2_shell_integration.zsh"
   ;;
   Linux)
     # commands for Linux go here
@@ -77,3 +78,5 @@ esac
 if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
   neofetch
 fi
+
+
