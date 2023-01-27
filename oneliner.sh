@@ -9,9 +9,9 @@ fi
 
 # check if ssh is available, else clone with https
 if ssh -T git@github.com; then
-  git clone git@github.com:bobbydmartino/dotfiles.git
+  git clone git@github.com:bobbydmartino/.dotfiles.git
 else
-  git clone https://github.com/bobbydmartino/dotfiles.git
+  git clone https://github.com/bobbydmartino/.dotfiles.git
 fi
 
 # prompt user what system they are on: mac|unix|docker|unixnosudo
@@ -70,13 +70,13 @@ write_to_yaml() {
 if [ $system = "mac" ]; then
     while read package; do
       write_to_yaml "$package"
-    done < $PWD/dotfiles/.config/install_list/.mackagelist
+    done < $PWD/.dotfiles/.config/install_list/.mackagelist
 else
     # Install imgcat for using iterm2's image viewing functionality over ssh
     pip install imgcat
     while read package; do
       write_to_yaml "$package"
-    done < $PWD/dotfiles/.config/install_list/.packagelist
+    done < $PWD/.dotfiles/.config/install_list/.packagelist
 fi
 # install what is still needed if possible (unixnosudo print which ones need to be installed and exit)
 while read line; do
@@ -107,21 +107,21 @@ done < ~/.dotfiles_backup/.backup.yaml
 [ ! -d ~/.tmux ] || mv ~/.tmux ~/.dotfiles_backup/.tmux
 
 # link all dotfiles from repo to home directory
-ln -sf $PWD/dotfiles/.local ~/.local
-ln -sf $PWD/dotfiles/.config ~/.config
+ln -sf $PWD/.dotfiles/.local ~/.local
+ln -sf $PWD/.dotfiles/.config ~/.config
 
 touch ~/.cache/history
 
 # create lf cache
 mkdir -p $HOME/.cache/lf
 
-ln -sf $PWD/dotfiles/.config/shell/profile ~/.zprofile
-ln -sf $PWD/dotfiles/.config/zsh/.zshrc ~/.zshrc
-ln -sf $PWD/dotfiles/.config/tmux/.tmux.conf ~/.tmux.conf
+ln -sf $PWD/.dotfiles/.config/shell/profile ~/.zprofile
+ln -sf $PWD/.dotfiles/.config/zsh/.zshrc ~/.zshrc
+ln -sf $PWD/.dotfiles/.config/tmux/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.tmux/
 export PATH=$PATH:~/.local/bin/ 
-ln -sf $PWD/dotfiles/.config/tmux/plugins/ ~/.tmux/plugins
-ln -sf $PWD/dotfiles/.config/tmux/resurrect ~/.tmux/resurrect
+ln -sf $PWD/.dotfiles/.config/tmux/plugins/ ~/.tmux/plugins
+ln -sf $PWD/.dotfiles/.config/tmux/resurrect ~/.tmux/resurrect
 
 # install plugins script
 while IFS="" read -r p || [ -n "$p" ]
