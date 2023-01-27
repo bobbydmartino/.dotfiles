@@ -25,8 +25,10 @@ read -p "Enter the number of your system: " number
 # Assign the corresponding string to the system variable
 if [ $number -eq 1 ]; then
   system="mac"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+  if [ ! command -v brew &> /dev/null ]; then
+    echo "INSTALL HOMEBREW"
+    exit 1
+  fi
 elif [ $number -eq 2 ]; then
   system="linux"
 elif [ $number -eq 3 ]; then
@@ -74,8 +76,6 @@ if [ $system = "mac" ]; then
       write_to_yaml "$package"
     done < $PWD/.dotfiles/.config/install_list/.mackagelist
 else
-    # Install imgcat for using iterm2's image viewing functionality over ssh
-    pip install imgcat
     while read package; do
       write_to_yaml "$package"
     done < $PWD/.dotfiles/.config/install_list/.packagelist
@@ -165,6 +165,9 @@ else
     # create the virtual environment
     python3 -m venv ~/.virtualenvs/debugpy
     ~/.virtualenvs/debugpy/bin/python -m pip install -U debugpy
+    
+    # Install imgcat for using iterm2's image viewing functionality over ssh
+    pip install imgcat
 fi
 
 
