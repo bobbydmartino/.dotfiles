@@ -522,3 +522,69 @@ cd
 cd code/legacy/YOGA/New\ 10\ in\ 10
 c
 mpv --no-config --vo=tct back.mp4
+top
+c
+ls
+cd code/dotfiles
+ls
+git status
+rm -rf .local/share/Trash/files/*
+rm -rf .local/share/Trash/info/*
+git status
+git add .
+git commit -m "LF functionality added"
+git push -u origin main
+git pull
+git merge
+git status
+git push -u origin main
+c
+ls
+ll
+cdd
+cd strato/
+ls
+cat docker-compose.
+cat docker-compose.yml
+e .env
+e docker-compose.yml
+ls
+cd frontend
+ls
+cd src
+ls
+e App.
+e App.js
+cddd
+git status
+git add .
+git status
+git commit -m "rearranging to data and adding env to docker compose"
+git push -u origin main
+git status
+ls
+ll
+du -sh .git
+git gc --aggressive --prune
+git repack -a -d --depth=250 --window=250
+git status
+ll
+du -sh .git
+c
+ls
+ll
+lfcd
+lfcd
+lf
+lfcd
+cddd
+ls
+ll
+cd dotfiles
+ls
+ll
+c
+ls
+lfcd
+c
+lfcd

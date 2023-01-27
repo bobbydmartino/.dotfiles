@@ -62,6 +62,18 @@ source ~/.config/shell/aliasrc
 source ~/.zprofile
 source ~/.config/zsh/plugins/fsh/zsh-syntax-highlighting.plugin.zsh
 
+case `uname` in
+  Darwin)
+    # commands for OS X go here
+    alias ls=ls 
+    alias ll="ls -al"
+  ;;
+  Linux)
+    # commands for Linux go here
+  ;;
+esac
+
+
 if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
   neofetch
 fi
