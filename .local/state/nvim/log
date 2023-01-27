@@ -8,3 +8,13 @@ stack traceback:
 	...r/share/nvim/runtime/lua/vim/treesitter/languagetree.lua:210: in function 'for_each_tree'
 	...sr/share/nvim/runtime/lua/vim/treesitter/highlighter.lua:168: in function 'on_line_impl'
 	...sr/share/nvim/runtime/lua/vim/treesitter/highlighter.lua:240: in function <...sr/share/nvim/runtime/lua/vim/treesitter/highlighter.lua:234>
+ERR 2023-01-25T20:24:48.126 nvim.35641.0 decor_provider_invoke:38: error in provider treesitter/highlighter:line: Error executing lua: ...im/0.8.2/share/nvim/runtime/lua/vim/treesitter/query.lua:219: query: invalid node type at position 1141 for language lua
+stack traceback:
+	[C]: in function '_ts_parse_query'
+	...im/0.8.2/share/nvim/runtime/lua/vim/treesitter/query.lua:219: in function 'get_query'
+	....2/share/nvim/runtime/lua/vim/treesitter/highlighter.lua:36: in function 'new'
+	....2/share/nvim/runtime/lua/vim/treesitter/highlighter.lua:160: in function 'get_query'
+	....2/share/nvim/runtime/lua/vim/treesitter/highlighter.lua:182: in function 'fn'
+	...2/share/nvim/runtime/lua/vim/treesitter/languagetree.lua:210: in function 'for_each_tree'
+	....2/share/nvim/runtime/lua/vim/treesitter/highlighter.lua:168: in function 'on_line_impl'
+	....2/share/nvim/runtime/lua/vim/treesitter/highlighter.lua:240: in function <....2/share/nvim/runtime/lua/vim/treesitter/highlighter.lua:234>
