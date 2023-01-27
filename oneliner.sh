@@ -1,5 +1,12 @@
 #!/bin/bash
 
+
+if ! command -v git &> /dev/null; then
+    echo "Git is not installed. Please install it to continue."
+    exit 1
+fi
+
+
 # check if ssh is available, else clone with https
 if ssh -T git@github.com; then
   git clone git@github.com:bobbydmartino/dotfiles.git
