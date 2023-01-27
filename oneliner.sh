@@ -51,7 +51,7 @@ echo "system: $system" > ~/.dotfiles_backup/.backup.yaml
 is_installed() {
   if [ $system = "mac" ]; then
     # Use the 'brew list' command to check if the package is installed on Mac
-    if brew list | grep "$1"; then
+    if command -v "$1" &> /dev/null; then
         echo "true"
     else
         echo "false"
