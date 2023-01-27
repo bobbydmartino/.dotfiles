@@ -42,7 +42,7 @@ echo "system: $system" > ~/.dotfiles_backup/.backup.yaml
 is_installed() {
   if [ $system = "mac" ]; then
     # Use the 'brew list' command to check if the package is installed on Mac
-    if brew list -1 | grep -q "^$1\$"; then
+    if brew list | grep "$1"; then
         echo "true"
     else
         echo "false"
@@ -60,11 +60,17 @@ write_to_yaml() {
         echo "$package:false" >> ~/.dotfiles_backup/.backup.yaml
     fi
 }
-
-while read package; do
-  write_to_yaml "$package"
-done < $PWD/dotfiles/.config/pluginlist/.packagelist
-
+if [ $system = "mac" ]; then
+    while read package; do
+      write_to_yaml "$package"
+    done < $PWD/dotfiles/.config/pluginlist/.mackagelist
+else
+    # Install imgcat for using iterm2's image viewing functionality over ssh
+    pip install imgcat
+    while read package; do
+      write_to_yaml "$package"
+    done < $PWD/dotfiles/.config/pluginlist/.packagelist
+fi
 # install what is still needed if possible (unixnosudo print which ones need to be installed and exit)
 while read line; do
   package=$(echo $line | cut -d ":" -f 1)
@@ -83,9 +89,6 @@ while read line; do
     echo $package $installed
   fi
 done < ~/.dotfiles_backup/.backup.yaml
-
-# Install imgcat for using iterm2's image viewing functionality over ssh
-pip install imgcat
 
 
 # add existing conflicting dotfiles to backup and mv to ~/.dotfiles_backup/
@@ -128,27 +131,32 @@ do
   fi
 done < ~/.config/pluginlist/.pluginlist
 
-# extract nvim image
-cd ~/.local/bin && ./nvim.appimage --appimage-extract
-cd ~
 
-# nvm install nodejs
-    # https://computingforgeeks.com/how-to-install-node-js-on-ubuntu-debian/
-if [ $(is_installed "nodejs") == "false" ]; then
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-    nvm install v16
+
+if [ $system = "mac" ]; then
+    echo "NVIM already installed"
+else
+    # extract nvim image
+    cd ~/.local/bin && ./nvim.appimage --appimage-extract
+    cd ~
+
+    # nvm install nodejs
+        # https://computingforgeeks.com/how-to-install-node-js-on-ubuntu-debian/
+    if [ $(is_installed "nodejs") == "false" ]; then
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+        nvm install v16
+    fi
+    # create virtualenv depending on system for dap debugging
+    # create the virtualenvs directory
+    mkdir -p ~/.virtualenvs
+
+    # create the virtual environment
+    python3 -m venv ~/.virtualenvs/debugpy
+    ~/.virtualenvs/debugpy/bin/python -m pip install -U debugpy
 fi
 
-
-# create virtualenv depending on system for dap debugging
-# create the virtualenvs directory
-mkdir -p ~/.virtualenvs
-
-# create the virtual environment
-python3 -m venv ~/.virtualenvs/debugpy
-~/.virtualenvs/debugpy/bin/python -m pip install -U debugpy
 
 echo exec zsh >> ~/.bashrc
