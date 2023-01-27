@@ -25,6 +25,7 @@ read -p "Enter the number of your system: " number
 # Assign the corresponding string to the system variable
 if [ $number -eq 1 ]; then
   system="mac"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 elif [ $number -eq 2 ]; then
   system="linux"
 elif [ $number -eq 3 ]; then
