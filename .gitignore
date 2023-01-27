@@ -10,7 +10,7 @@ plugins/
 squashfs-root
 nvm
 github-copilot
-.local/share/history
+history
 packer_compiled.lua
 # vim autoload
 autoload
