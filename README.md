@@ -6,7 +6,7 @@ My dotfiles are a collection of configuration files that I use to personalize my
 ## Install
 
 To install the dotfiles, you can use the following command:  
-`curl -L -o oneliner.sh https://github.com/bobbydmartino/.dotfiles/blob/main/oneliner.sh && chmod +x oneliner.sh && ./oneliner.sh`
+`curl -L -o oneliner.sh https://raw.githubusercontent.com/bobbydmartino/.dotfiles/main/oneliner.sh && chmod +x oneliner.sh && ./oneliner.sh`
 
 This command will automatically install the dotfiles for you, and it's compatible with different operating systems.
 
