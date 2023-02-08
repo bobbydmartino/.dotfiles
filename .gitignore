@@ -12,6 +12,7 @@ nvm
 github-copilot
 history
 packer_compiled.lua
+.config/nvim/plugin/packer_compiled.lua
 # vim autoload
 autoload
 .local/share/nvim

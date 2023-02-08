@@ -22,6 +22,7 @@ alias \
 # Colorize commands when possible.
 alias \
 	ls="ls -hN --color=auto --group-directories-first" \
+    l="ls" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
@@ -71,7 +72,7 @@ alias cd5="cd ../../../../.."
 
 
 #make git aliases, either formal or informal! (im leaning informal)
-alias gs="git status -sb"
+alias gs="git status"
 alias gl="git log"
 alias ga="git add -A"
 alias gad="git add ."
