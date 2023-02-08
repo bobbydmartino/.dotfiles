@@ -6,7 +6,7 @@ source ~/.bash_aliases
 [ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
 
 alias tmux="tmux -u"
-alias ta="tmux new -As DEV"
+alias ta="tmux -2 new -As DEV"
 alias tks="tmux kill-server"
 
 alias c="clear"
