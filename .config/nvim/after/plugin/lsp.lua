@@ -7,6 +7,7 @@ lsp.ensure_installed({
 })
 
 
+vim.keymap.set("n","<leader>f", [[:lua vim.lsp.buf.format()<CR>]],{})
 
 lsp.configure('pylsp', {
   settings = {

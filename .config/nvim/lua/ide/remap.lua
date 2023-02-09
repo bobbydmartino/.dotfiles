@@ -26,3 +26,4 @@ vim.keymap.set("n","<leader>js", [[:%!python -m json.tool<CR>]],{})
 vim.keymap.set("n", "<S-Tab>", "<<")
 vim.keymap.set("v", "<S-Tab>", "<<")
 vim.keymap.set("i", "<S-Tab>", "<C-d>")
+
