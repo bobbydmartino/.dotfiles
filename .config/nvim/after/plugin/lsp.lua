@@ -3,7 +3,6 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
 	'pylsp',
-	'sumneko_lua'
 })
 
 
