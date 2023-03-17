@@ -69,7 +69,7 @@ return require('packer').startup(function(use)
        }
     end
     }
-    use('github/copilot.vim')
+    -- use('github/copilot.vim')
     --Debugging
     use('mfussenegger/nvim-dap')
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
@@ -102,7 +102,7 @@ return require('packer').startup(function(use)
     })
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
-    --LSP
+    -- LSP 
     use {
       'VonHeikemen/lsp-zero.nvim',
       branch = 'v1.x',

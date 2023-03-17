@@ -1,6 +1,43 @@
 #!/bin/bash
 
 
+# Define the repository URL and the local directory
+REPO_URL="https://github.com/bobbydmartino/.dotfiles"
+SSH_URL="git@github.com:bobbydmartino/.dotfiles.git"
+LOCAL_DIR="$HOME/.dotfiles"
+
+# Check if the first argument is '--update'
+if [ "$1" == "--update" ]; then
+    # Check if the local directory exists and is a git repository
+    if [ -d "$LOCAL_DIR/.git" ]; then
+        # Change to the local directory
+        cd "$LOCAL_DIR"
+
+        # Check if the local repository is synced with the remote repository
+        git fetch
+        UPSTREAM=${2:-'@{u}'}
+        LOCAL=$(git rev-parse @)
+        REMOTE=$(git rev-parse "$UPSTREAM")
+        BASE=$(git merge-base @ "$UPSTREAM")
+
+        if [ $LOCAL = $REMOTE ]; then
+            echo "The repository is up-to-date."
+        elif [ $LOCAL = $BASE ]; then
+            echo "Updating the repository..."
+            git pull
+        else
+            echo "The local repository is not in sync with the remote. Deleting and cloning the repository..."
+            rm -rf "$LOCAL_DIR"
+            git clone "$SSH_URL" "$LOCAL_DIR"
+        fi
+    else
+        echo "The local directory does not exist or is not a git repository. Cloning the repository..."
+        rm -rf "$LOCAL_DIR"
+        git clone "$REPO_URL" "$LOCAL_DIR"
+    fi
+fi
+
+
 if ! command -v git &> /dev/null; then
     echo "Git is not installed. Please install it to continue."
     exit 1
@@ -153,7 +190,7 @@ else
         # https://computingforgeeks.com/how-to-install-node-js-on-ubuntu-debian/
     if [ $(is_installed "nodejs") == "false" ]; then
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-        export NVM_DIR="$HOME/.nvm"
+        export NVM_DIR="$HOME/.config/nvm"
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
         [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
         nvm install v16

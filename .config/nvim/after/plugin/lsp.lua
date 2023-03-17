@@ -3,7 +3,8 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
 	'pylsp',
-	'sumneko_lua'
+    'tsserver',
+    'eslint',
 })
 
 
@@ -38,7 +39,7 @@ cmp.setup({
     ['<Tab>'] = cmp.mapping.select_next_item(),
     -- CTRL+SHIFT+f to scroll backwards in description
     ['<C-S-f>'] = cmp.mapping.scroll_docs(-4),
-    -- CTRL+F to scroll forwards in the description
+    -- CTRL+F ZXto scroll forwards in the description
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     -- CTRL+SPACE to bring up completion at current Cursor location
     ['<C-Space>'] = cmp.mapping.complete(),
