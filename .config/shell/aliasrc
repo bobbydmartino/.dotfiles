@@ -93,7 +93,7 @@ alias dils="docker image ls"
 alias dimp="docker image prune"
 alias dcop="docker container prune"
 
-alias rmipynb="rm -rf `find -type d -name .ipynb_checkpoints"
+alias rmipynb="rm -rf `find -type d -name .ipynb_checkpoints`"
 
 
 
