@@ -28,13 +28,14 @@ if [ "$1" == "--update" ]; then
         else
             echo "The local repository is not in sync with the remote. Deleting and cloning the repository..."
             rm -rf "$LOCAL_DIR"
-            git clone "$SSH_URL" "$LOCAL_DIR"
+            git clone "$SSH_URL" "$HOME"
         fi
     else
         echo "The local directory does not exist or is not a git repository. Cloning the repository..."
         rm -rf "$LOCAL_DIR"
-        git clone "$REPO_URL" "$LOCAL_DIR"
+        git clone "$REPO_URL" "$HOME"
     fi
+    exit 1
 fi
 
 
