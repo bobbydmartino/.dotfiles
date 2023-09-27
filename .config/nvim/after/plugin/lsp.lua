@@ -3,8 +3,6 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
 	'pylsp',
-    'tsserver',
-    'eslint',
 })
 
 
