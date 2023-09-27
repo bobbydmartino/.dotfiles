@@ -11,6 +11,6 @@ hi pythonMethodCall ctermfg=Blue guifg=#0055AA
 syntax region pythonFString start=/f'/ end=/'/ contains=pythonFStringBraces
 syntax region pythonFString start=/f"/ end=/"/ contains=pythonFStringBraces
 syntax region pythonFStringBraces start=/{/ end=/}/ contained
-hi pythonFString ctermfg=Blue guifg=#0055AA
+hi pythonFString ctermfg=Magenta guifg=#AA23FF
 hi pythonFStringBraces cterm=none ctermbg=none guifg=NONE guibg=NONE
 
