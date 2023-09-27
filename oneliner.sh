@@ -146,6 +146,7 @@ done < ~/.df_backup/.backup.yaml
 [ ! -f ~/.zshrc ] || mv ~/.zshrc ~/.df_backup/.zshrc
 [ ! -f ~/.tmux.conf ] || mv ~/.tmux.conf ~/.df_backup/.tmux.conf
 [ ! -d ~/.tmux ] || mv ~/.tmux ~/.df_backup/.tmux
+[ ! -f ~/.isort.cfg ] || mv ~/.isort.cfg ~/.df_backup/.isort.cfg
 
 # link all dotfiles from repo to home directory
 ln -sf $PWD/.dotfiles/.local ~/.local
@@ -159,6 +160,7 @@ mkdir -p $HOME/.cache/lf
 ln -sf $PWD/.dotfiles/.config/shell/profile ~/.zprofile
 ln -sf $PWD/.dotfiles/.config/zsh/.zshrc ~/.zshrc
 ln -sf $PWD/.dotfiles/.config/tmux/.tmux.conf ~/.tmux.conf
+ln -sf $PWD/.dotfiles/.config/python/.isort.cfg ~/.isort.cfg
 mkdir -p ~/.tmux/
 export PATH=$PATH:~/.local/bin/ 
 ln -sf $PWD/.dotfiles/.config/tmux/plugins/ ~/.tmux/plugins
