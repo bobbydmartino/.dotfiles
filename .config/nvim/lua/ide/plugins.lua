@@ -48,7 +48,13 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     --Quality of life
-    -- use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    -- use {
+    --     'nvim-treesitter/nvim-treesitter',
+    --     run = function()
+    --         local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+    --         ts_update()
+    --     end,
+    -- }
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
     use('tpope/vim-surround')
@@ -95,9 +101,9 @@ return require('packer').startup(function(use)
         vim.cmd('let g:airline_theme="minimalist"')
     end
     })
-    use({'rafi/awesome-vim-colorschemes',
+    use({'bobbydmartino/awesome-vim-colorschemes',
     config = function()
-        vim.cmd('colorscheme ayu')
+        vim.cmd('colorscheme jupyterlike')
     end
     })
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
