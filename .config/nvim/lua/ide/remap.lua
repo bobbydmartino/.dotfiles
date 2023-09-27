@@ -16,13 +16,18 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 --remove capital Q
-vim.keymap.set("n","Q","<nop>")
+vim.keymap.set("n", "Q", "<nop>")
 
 --format json
-vim.keymap.set("n","<leader>js", [[:%!python -m json.tool<CR>]],{})
+vim.keymap.set("n", "<leader>js", [[:%!python -m json.tool<CR>]], {})
 --shift tab reverse tab
 vim.keymap.set("n", "<S-Tab>", "<<")
 vim.keymap.set("v", "<S-Tab>", "<<")
 vim.keymap.set("i", "<S-Tab>", "<C-d>")
 vim.api.nvim_set_keymap('n', '<leader>#', ':set number!<CR>', { noremap = true, silent = true })
 
+
+-- Map <leader>f to sort imports using isort and then format with LSP
+vim.api.nvim_set_keymap('n', '<leader>F',
+    [[:lua vim.cmd('silent !isort %'); vim.cmd('edit'); vim.lsp.buf.format()<CR>]],
+    { noremap = true, silent = true })
