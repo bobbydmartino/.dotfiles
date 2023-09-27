@@ -14,6 +14,7 @@ syntax region pythonFStringBraces start=/{/ end=/}/ contained
 hi pythonFString ctermfg=Magenta guifg=#AA23FF
 hi pythonFStringBraces cterm=none ctermbg=none guifg=NONE guibg=NONE
 
-hi pythonBuiltin ctermfg=Green guifg=#008000
+" hi pythonBuiltin ctermfg=Green guifg=#008000
+hi pythonBuiltin ctermfg=244 guifg=#808080
 
 
