@@ -4,7 +4,7 @@
 REPO_URL="https://github.com/bobbydmartino/.dotfiles"
 SSH_URL="git@github.com:bobbydmartino/.dotfiles.git"
 LOCAL_DIR="$HOME/.dotfiles"
-
+export DEBIAN_FRONTEND=noninteractive
 # Check if the first argument is '--update'
 if [ "$1" == "--update" ]; then
     # Check if the local directory exists and is a git repository
