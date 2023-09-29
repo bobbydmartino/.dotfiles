@@ -125,9 +125,9 @@ while read line; do
   installed=$(echo $line | cut -d ":" -f 2)
   if [ $installed = "false" ]; then
     if [ $system = "docker" ]; then
-      apt install -y $package
+      DEBIAN_FRONTEND=noninteractive apt install -y $package
     elif [ $system = "linux" ]; then
-      sudo apt install -y $package
+      sudo DEBIAN_FRONTEND=noninteractive apt install -y $package
     elif [ $system = "mac" ]; then
       brew install $package
     elif [ $system = "linuxnosudo" ]; then
