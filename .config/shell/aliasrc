@@ -94,7 +94,7 @@ alias dimp="docker image prune"
 alias dcop="docker container prune"
 
 alias rmipynb="find / -type d -name .ipynb_checkpoints -exec rm -rf {} +"
-
+alias rmtrsh="find / -type d -name .Trash-0 -exec rm -rf {} +"
 
 dmscf() {
     if [ -z "$1" ]; then
