@@ -46,7 +46,7 @@ fi
 # Check for --dockerfile option
 if [ "$1" == "--dockerfile" ]; then
     git clone https://github.com/bobbydmartino/.dotfiles.git
-    system="linux"
+    system="docker"
 else
     # check if ssh is available, else clone with https
     if ssh -T git@github.com; then
