@@ -5,6 +5,8 @@ REPO_URL="https://github.com/bobbydmartino/.dotfiles"
 SSH_URL="git@github.com:bobbydmartino/.dotfiles.git"
 LOCAL_DIR="$HOME/.dotfiles"
 export DEBIAN_FRONTEND=noninteractive
+
+
 # Check if the first argument is '--update'
 if [ "$1" == "--update" ]; then
     # Check if the local directory exists and is a git repository
@@ -37,46 +39,51 @@ if [ "$1" == "--update" ]; then
     exit 1
 fi
 
-
 if ! command -v git &> /dev/null; then
     echo "Git is not installed. Please install it to continue."
     exit 1
 fi
-
-
-# check if ssh is available, else clone with https
-if ssh -T git@github.com; then
-  git clone git@github.com:bobbydmartino/.dotfiles.git
+# Check for --dockerfile option
+if [ "$1" == "--dockerfile" ]; then
+    git clone https://github.com/bobbydmartino/.dotfiles.git
+    system="docker"
 else
-  git clone https://github.com/bobbydmartino/.dotfiles.git
+    # check if ssh is available, else clone with https
+    if ssh -T git@github.com; then
+      git clone git@github.com:bobbydmartino/.dotfiles.git
+    else
+      git clone https://github.com/bobbydmartino/.dotfiles.git
+    fi
+    # prompt user what system they are on: mac|unix|docker|unixnosudo
+    echo "Which system are you on?"
+    echo "1) Mac"
+    echo "2) Linux"
+    echo "3) Docker"
+    echo "4) Linux (no sudo)"
+    read -p "Enter the number of your system: " number
+    
+    # Assign the corresponding string to the system variable
+    if [ $number -eq 1 ]; then
+      system="mac"
+      if [ ! command -v brew &> /dev/null ]; then
+        echo "INSTALL HOMEBREW"
+        exit 1
+      fi
+    elif [ $number -eq 2 ]; then
+      system="linux"
+    elif [ $number -eq 3 ]; then
+      system="docker"
+      apt update
+    elif [ $number -eq 4 ]; then
+      system="linuxnosudo"
+    else
+      echo "Invalid input. Exiting script."
+      exit 1
+    fi  
 fi
 
-# prompt user what system they are on: mac|unix|docker|unixnosudo
-echo "Which system are you on?"
-echo "1) Mac"
-echo "2) Linux"
-echo "3) Docker"
-echo "4) Linux (no sudo)"
-read -p "Enter the number of your system: " number
 
-# Assign the corresponding string to the system variable
-if [ $number -eq 1 ]; then
-  system="mac"
-  if [ ! command -v brew &> /dev/null ]; then
-    echo "INSTALL HOMEBREW"
-    exit 1
-  fi
-elif [ $number -eq 2 ]; then
-  system="linux"
-elif [ $number -eq 3 ]; then
-  system="docker"
-  apt update
-elif [ $number -eq 4 ]; then
-  system="linuxnosudo"
-else
-  echo "Invalid input. Exiting script."
-  exit 1
-fi
+
 
 # touch .df_backup.yaml and bash aliases
 mkdir -p ~/.df_backup
