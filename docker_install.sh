@@ -15,7 +15,7 @@ apt-get update
 apt-get install -y neovim
 
 # Install LazyVim
-git clone https://github.com/LazyVim/starter "$HOME/.config/nvim"
+git clone https://github.com/LazyVim/starter "$HOME/.dotfiles/.config/nvim"
 rm -rf "$HOME/.config/nvim/.git"
 
 # create lf cache
@@ -30,6 +30,8 @@ ln -sf "$HOME/.dotfiles/.config/zsh/.zshrc" "$HOME/.zshrc"
 mkdir -p ~/.tmux/
 ln -sf "$HOME/.dotfiles/.config/tmux/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$HOME/.dotfiles/.config/python/.isort.cfg" "$HOME/.isort.cfg"
+ln -sf "$HOME/.dotfiles/.config" "$HOME/.config"
+
 
 # Install custom configurations for LazyVim
 mkdir -p "$HOME/.config/nvim/lua/plugins"
@@ -80,10 +82,7 @@ done < "$PLUGIN_LIST"
 chsh -s "$(which zsh)"
 
 # Initial setup of LazyVim
-mv "$HOME/.dotfiles/.config" "$HOME/.config"
-nvim --headless "+Lazy! sync" +qa
-mv "$HOME/.config" "$HOME/.dotfiles/.config"
-ln -sf "$HOME/.dotfiles/.config" "$HOME/.config"
 
+nvim --headless "+Lazy! sync" +qa
 export PATH=$PATH:~/.local/bin/ 
 echo exec zsh >> ~/.bashrc
