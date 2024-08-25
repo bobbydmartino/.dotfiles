@@ -35,7 +35,7 @@ return {
 EOT
 
 # Improved plugin installation script
-PLUGIN_LIST="$HOME/.config/install_list/.pluginlist"
+PLUGIN_LIST="$HOME/.dotfiles/.config/install_list/.pluginlist"
 
 if [ ! -f "$PLUGIN_LIST" ]; then
     echo "Plugin list file not found: $PLUGIN_LIST"
