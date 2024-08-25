@@ -20,6 +20,7 @@ rm -rf "$HOME/.config/nvim/.git"
 
 # Link dotfiles (excluding Neovim config which is now managed by LazyVim)
 ln -sf "$HOME/.dotfiles/.local" "$HOME/.local"
+ln -sf "$HOME/.dotfiles/.config" "$HOME/.config"
 ln -sf "$HOME/.dotfiles/.config/shell/profile" "$HOME/.zprofile"
 ln -sf "$HOME/.dotfiles/.config/zsh/.zshrc" "$HOME/.zshrc"
 ln -sf "$HOME/.dotfiles/.config/tmux/.tmux.conf" "$HOME/.tmux.conf"
