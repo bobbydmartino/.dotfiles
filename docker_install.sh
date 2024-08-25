@@ -21,7 +21,7 @@ rm -rf "$HOME/.config/nvim/.git"
 # create lf cache
 mkdir -p $HOME/.cache/lf
 touch $HOME/.cache/history
-touch $HOMEE/.bash_aliases
+touch $HOME/.bash_aliases
 
 # Link dotfiles (excluding Neovim config which is now managed by LazyVim)
 ln -sf "$HOME/.dotfiles/.local" "$HOME/.local"
