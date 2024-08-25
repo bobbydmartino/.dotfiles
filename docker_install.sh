@@ -25,7 +25,6 @@ touch $HOME/.bash_aliases
 
 # Link dotfiles (excluding Neovim config which is now managed by LazyVim)
 ln -sf "$HOME/.dotfiles/.local" "$HOME/.local"
-ln -sf "$HOME/.dotfiles/.config" "$HOME/.config"
 ln -sf "$HOME/.dotfiles/.config/shell/profile" "$HOME/.zprofile"
 ln -sf "$HOME/.dotfiles/.config/zsh/.zshrc" "$HOME/.zshrc"
 mkdir -p ~/.tmux/
@@ -81,7 +80,10 @@ done < "$PLUGIN_LIST"
 chsh -s "$(which zsh)"
 
 # Initial setup of LazyVim
+mv "$HOME/.dotfiles/.config" "$HOME/.config"
 nvim --headless "+Lazy! sync" +qa
+mv "$HOME/.config" "$HOME/.dotfiles/.config"
+ln -sf "$HOME/.dotfiles/.config" "$HOME/.config"
 
 export PATH=$PATH:~/.local/bin/ 
 echo exec zsh >> ~/.bashrc
