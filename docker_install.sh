@@ -21,6 +21,7 @@ rm -rf "$HOME/.config/nvim/.git"
 # create lf cache
 mkdir -p $HOME/.cache/lf
 touch $HOME/.cache/history
+touch $HOMEE/.bash_aliases
 
 # Link dotfiles (excluding Neovim config which is now managed by LazyVim)
 ln -sf "$HOME/.dotfiles/.local" "$HOME/.local"
@@ -63,7 +64,7 @@ while IFS= read -r line || [ -n "$line" ]; do
     plugin="${parts[1]}"
     repo="${parts[2]}"
 
-    plugin_dir="$HOME/.config/$app/plugins/$plugin"
+    plugin_dir="$HOME/.dotfiles/.config/$app/plugins/$plugin"
     
     if [ ! -d "$plugin_dir" ]; then
         echo "Installing plugin: $plugin for $app"
