@@ -142,6 +142,15 @@ while read line; do
   fi
 done < ~/.df_backup/.backup.yaml
 
+if [ $system = "linux" ]; then
+    curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+    sudo apt-get install -y nodejs
+elif [ $system = "docker" ]; then
+    curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+    apt-get install -y nodejs
+elif [ $system = "linuxnosudo" ]; then
+    echo "The package Nodejs needs to be installed, please ask your system administrator to install it."
+fi
 
 # add existing conflicting dotfiles to backup and mv to ~/.df_backup/
 [ ! -d ~/.local ] || mv ~/.local ~/.df_backup/.local
@@ -215,6 +224,7 @@ done < "$PLUGIN_LIST"
 
 if [ $system = "mac" ]; then
     echo "NVIM already installed"
+    pip install black isort
 else
     # extract nvim image
     cd ~/.local/bin && ./nvim.appimage --appimage-extract
