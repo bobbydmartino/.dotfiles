@@ -1,137 +1,81 @@
 
-return {
-  -- Bufferline configuration
-  {
-    "akinsho/bufferline.nvim",
-    opts = {
-      options = {
-        always_show_bufferline = true,
-      },
-    },
-  },
+-- Set absolute line numbers
+vim.wo.number = true
+vim.wo.relativenumber = false
 
-  -- Ensure the necessary language servers are enabled
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        pyright = {}, -- For Python
-        lua_ls = {}, -- For Lua
-        -- Add more language servers as needed
-      },
-    },
-  },
+-- Custom keymaps
+vim.keymap.set("n", "<leader>f", function()
+  require("conform").format()
+end, { desc = "Format document" })
 
-  -- Configure formatting
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      formatters_by_ft = {
-        python = { "black" },
-        lua = { "stylua" },
-        -- Add more filetypes and formatters as needed
-      },
-    },
-  },
+vim.keymap.set("n", "ZX", function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local buf_name = vim.api.nvim_buf_get_name(bufnr)
+  local modified = vim.api.nvim_buf_get_option(bufnr, "modified")
+  local buf_count = #vim.fn.getbufinfo({ buflisted = 1 })
+  local buf_empty = vim.fn.empty(vim.fn.expand("%")) == 1 and not modified
 
-  -- Updated Neo-tree configuration
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      filesystem = {
-        filtered_items = {
-          visible = true, -- This will show hidden files by default
-        },
-      },
-      window = {
-        position = "left",
-        width = 30,
-        mappings = {
-          ["<cr>"] = "open",
-          ["o"] = "open",
-          ["<c-v>"] = "open_vsplit",
-          ["<bs>"] = "navigate_up",
-          ["."] = "set_root",
-          ["H"] = "toggle_hidden",
-          ["/"] = "fuzzy_finder",
-          ["D"] = "fuzzy_finder_directory",
-          ["f"] = "filter_on_submit",
-          ["<c-x>"] = "clear_filter",
-          ["[g"] = "prev_git_modified",
-          ["]g"] = "next_git_modified",
-        },
-      },
-      default_component_configs = {
-        indent = {
-          with_expanders = true,
-          expander_collapsed = "",
-          expander_expanded = "",
-          expander_highlight = "NeoTreeExpander",
-        },
-      },
-    },
-    keys = {
-      { "<leader>e", false }, -- Disable default toggle
-      {
-        "<C-n>",
-        function()
-          local neo_tree_window = vim.fn.bufwinnr("neo-tree")
-          if neo_tree_window > 0 then
-            vim.cmd(neo_tree_window .. "wincmd w")
-          else
-            vim.cmd("wincmd h")
-          end
-        end,
-        desc = "Focus Neo-tree",
-      },
-    },
-  },
+  -- Check if current buffer is Neo-tree
+  if buf_name:match("neo%-tree filesystem") then
+    -- Focus on the next window
+    vim.cmd("wincmd w")
+    return
+  end
 
-  -- Add tpope's commentary plugin
-  {
-    "tpope/vim-commentary",
-    event = "VeryLazy",
-    keys = {
-      { "gcc", mode = "n", desc = "Comment line" },
-      { "gc", mode = { "n", "o" }, desc = "Comment motion" },
-      { "gc", mode = "x", desc = "Comment selection" },
-    },
-  },
+  if buf_count == 1 or buf_empty then
+    if modified then
+      vim.ui.input({
+        prompt = "Buffer is modified. Save changes? (y/n) ",
+      }, function(input)
+        if input == "y" then
+          vim.cmd("write")
+        end
+        vim.cmd("qall")
+      end)
+    else
+      vim.cmd("qall")
+    end
+  else
+    if modified then
+      vim.ui.input({
+        prompt = "Buffer is modified. Save changes? (y/n) ",
+      }, function(input)
+        if input == "y" then
+          vim.cmd("write")
+        end
+        vim.cmd("bdelete " .. bufnr)
+        -- Focus on the next buffer after closing
+        vim.cmd("bnext")
+      end)
+    else
+      vim.cmd("bdelete " .. bufnr)
+      -- Focus on the next buffer after closing
+      vim.cmd("bnext")
+    end
+  end
+end, { desc = "Close current buffer or exit Vim" })
 
-  -- Custom colorscheme
-  {
-    "bobbydmartino/awesome-vim-colorschemes",
-    config = function()
-      vim.cmd("colorscheme jupyterlike")
-    end,
-  },
+-- Automatically open Neo-tree on startup and focus on the main window
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
+    vim.cmd("wincmd l") -- Move focus to the main window
+  end,
+})
 
-  -- LSP and formatting configuration
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        -- Add your language servers here
-      },
-    },
-  },
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      formatters_by_ft = {
-        python = { "black", "isort" },
-        -- Add other formatters for different filetypes here
-      },
-    },
-  },
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = {
-      options = {
-        -- Disable sections that might interfere with bufferline
-        disabled_filetypes = { statusline = { "dashboard", "alpha" } },
-      },
-    },
-  },
-}
+-- Prevent Neo-tree from taking full screen when closing buffers
+vim.api.nvim_create_autocmd("WinClosed", {
+  callback = function()
+    if #vim.api.nvim_list_wins() == 1 then
+      local buf_name = vim.api.nvim_buf_get_name(0)
+      if buf_name:match("neo%-tree filesystem") then
+        vim.cmd("quit")
+      end
+    end
+  end,
+})
+
+-- Custom keymaps
+vim.keymap.set({ "n", "v" }, "<leader>f", function()
+  require("conform").format({ async = true, lsp_fallback = true })
+end, { desc = "Format document or range" })
