@@ -8,6 +8,13 @@ git clone https://github.com/bobbydmartino/.dotfiles.git "$HOME/.dotfiles"
 # Install packages from .packagelist
 xargs -a "$HOME/.dotfiles/.config/install_list/.packagelist" apt-get install -y
 
+# Install Node.js
+curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+apt-get install -y nodejs
+
+# Install Python packages
+pip install isort black imgcat
+
 # Install Neovim
 apt-get update && apt-get install -y software-properties-common
 add-apt-repository ppa:neovim-ppa/unstable
@@ -35,12 +42,9 @@ ln -sf "$HOME/.dotfiles/.config" "$HOME/.config"
 
 # Install custom configurations for LazyVim
 mkdir -p "$HOME/.config/nvim/lua/plugins"
-cat <<EOT > "$HOME/.config/nvim/lua/plugins/custom.lua"
--- Your custom plugin configurations here
-return {
-  -- Add your custom plugins and configurations
-}
-EOT
+# Append custom configurations to LazyVim files
+cat "$HOME/.dotfiles/.config/lazy/custom_init.lua" >> "$HOME/.config/nvim/init.lua"
+cat "$HOME/.dotfiles/.config/lazy/custom_plugins.lua" >> "$HOME/.config/nvim/lua/plugins/custom.lua"
 
 # Improved plugin installation script
 PLUGIN_LIST="$HOME/.dotfiles/.config/install_list/.pluginlist"
