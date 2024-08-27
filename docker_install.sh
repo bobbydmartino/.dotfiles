@@ -23,7 +23,7 @@ apt-get install -y neovim
 
 # Install LazyVim
 git clone https://github.com/LazyVim/starter "$HOME/.dotfiles/.config/nvim"
-rm -rf "$HOME/.config/nvim/.git"
+rm -rf "$HOME/.dotfiles/.config/nvim/.git"
 
 # create lf cache
 mkdir -p $HOME/.cache/lf
