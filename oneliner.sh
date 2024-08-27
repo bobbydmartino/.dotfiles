@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 # Define the repository URL and the local directory
 REPO_URL="https://github.com/bobbydmartino/.dotfiles"
 SSH_URL="git@github.com:bobbydmartino/.dotfiles.git"
@@ -43,47 +45,42 @@ if ! command -v git &> /dev/null; then
     echo "Git is not installed. Please install it to continue."
     exit 1
 fi
-# Check for --dockerfile option
-if [ "$1" == "--dockerfile" ]; then
-    git clone https://github.com/bobbydmartino/.dotfiles.git
-    system="linux"
+
+# check if ssh is available, else clone with https
+if ssh -T git@github.com; then
+  git clone git@github.com:bobbydmartino/.dotfiles.git
 else
-    # check if ssh is available, else clone with https
-    if ssh -T git@github.com; then
-      git clone git@github.com:bobbydmartino/.dotfiles.git
-    else
-      git clone https://github.com/bobbydmartino/.dotfiles.git
-    fi
-    # prompt user what system they are on: mac|unix|docker|unixnosudo
-    echo "Which system are you on?"
-    echo "1) Mac"
-    echo "2) Linux"
-    echo "3) Docker"
-    echo "4) Linux (no sudo)"
-    read -p "Enter the number of your system: " number
-    
-    # Assign the corresponding string to the system variable
-    if [ $number -eq 1 ]; then
-      system="mac"
-      if [ ! command -v brew &> /dev/null ]; then
-        echo "INSTALL HOMEBREW"
-        exit 1
-      fi
-    elif [ $number -eq 2 ]; then
-      system="linux"
-    elif [ $number -eq 3 ]; then
-      system="docker"
-      apt update
-    elif [ $number -eq 4 ]; then
-      system="linuxnosudo"
-    else
-      echo "Invalid input. Exiting script."
-      exit 1
-    fi  
+  git clone https://github.com/bobbydmartino/.dotfiles.git
 fi
+# prompt user what system they are on: mac|unix|docker|unixnosudo
+echo "Which system are you on?"
+echo "1) Mac"
+echo "2) Linux"
+echo "3) Docker"
+echo "4) Linux (no sudo)"
+read -p "Enter the number of your system: " number
 
-
-
+# Assign the corresponding string to the system variable
+if [ $number -eq 1 ]; then
+  system="mac"
+  if [ ! command -v brew &> /dev/null ]; then
+    echo "INSTALL HOMEBREW"
+    exit 1
+  fi
+elif [ $number -eq 2 ]; then
+  system="linux"
+elif [ $number -eq 3 ]; then
+  system="docker"
+  echo "Note: Add 'RUN apt-get update && apt-get install -y curl wget git apt-utils && \\"
+  echo "wget -O - https://raw.githubusercontent.com/bobbydmartino/.dotfiles/main/docker_install.sh | bash' to your Dockerfile instead"
+  echo "Continuing anyway..."
+  apt update
+elif [ $number -eq 4 ]; then
+  system="linuxnosudo"
+else
+  echo "Invalid input. Exiting script."
+  exit 1
+fi  
 
 # touch .df_backup.yaml and bash aliases
 mkdir -p ~/.df_backup
@@ -155,40 +152,66 @@ done < ~/.df_backup/.backup.yaml
 [ ! -d ~/.tmux ] || mv ~/.tmux ~/.df_backup/.tmux
 [ ! -f ~/.isort.cfg ] || mv ~/.isort.cfg ~/.df_backup/.isort.cfg
 
-# link all dotfiles from repo to home directory
-ln -sf $PWD/.dotfiles/.local ~/.local
-ln -sf $PWD/.dotfiles/.config ~/.config
-
-touch ~/.cache/history
+# Install LazyVim
+git clone https://github.com/LazyVim/starter "$HOME/.dotfiles/.config/nvim"
+rm -rf "$HOME/.dotfiles/.config/nvim/.git"
 
 # create lf cache
 mkdir -p $HOME/.cache/lf
+touch $HOME/.cache/history
+touch $HOME/.bash_aliases
 
-ln -sf $PWD/.dotfiles/.config/shell/profile ~/.zprofile
-ln -sf $PWD/.dotfiles/.config/zsh/.zshrc ~/.zshrc
-ln -sf $PWD/.dotfiles/.config/tmux/.tmux.conf ~/.tmux.conf
-ln -sf $PWD/.dotfiles/.config/python/.isort.cfg ~/.isort.cfg
+# Link dotfiles (excluding Neovim config which is now managed by LazyVim)
+ln -sf "$HOME/.dotfiles/.local" "$HOME/.local"
+ln -sf "$HOME/.dotfiles/.config/shell/profile" "$HOME/.zprofile"
+ln -sf "$HOME/.dotfiles/.config/zsh/.zshrc" "$HOME/.zshrc"
 mkdir -p ~/.tmux/
-export PATH=$PATH:~/.local/bin/ 
-ln -sf $PWD/.dotfiles/.config/tmux/plugins/ ~/.tmux/plugins
-ln -sf $PWD/.dotfiles/.config/tmux/resurrect ~/.tmux/resurrect
-
-# install plugins script
-while IFS="" read -r p || [ -n "$p" ]
-do
-  arrIN=(${p// / })
+ln -sf "$HOME/.dotfiles/.config/tmux/.tmux.conf" "$HOME/.tmux.conf"
+ln -sf "$HOME/.dotfiles/.config/python/.isort.cfg" "$HOME/.isort.cfg"
+ln -sf "$HOME/.dotfiles/.config" "$HOME/.config"
 
 
-  mkdir -p ".config/${arrIN[0]}"
-  mkdir -p ".config/${arrIN[0]}/plugins/"
+# Install custom configurations for LazyVim
+mkdir -p "$HOME/.config/nvim/lua/plugins"
+# Append custom configurations to LazyVim files
+cat "$HOME/.dotfiles/.config/lazy/custom_init.lua" >> "$HOME/.config/nvim/init.lua"
+cat "$HOME/.dotfiles/.config/lazy/custom_plugins.lua" >> "$HOME/.config/nvim/lua/plugins/custom.lua"
 
-  if [ ! -d ".config/${arrIN[0]}/plugins/${arrIN[1]}" ]
-  then
-          git clone ${arrIN[2]} ".config/${arrIN[0]}/plugins/${arrIN[1]}"
-  fi
-done < ~/.config/install_list/.pluginlist
+# Improved plugin installation script
+PLUGIN_LIST="$HOME/.dotfiles/.config/install_list/.pluginlist"
 
+if [ ! -f "$PLUGIN_LIST" ]; then
+    echo "Plugin list file not found: $PLUGIN_LIST"
+    exit 1
+fi
 
+while IFS= read -r line || [ -n "$line" ]; do
+    if [ -z "$line" ]; then
+        continue
+    fi
+
+    read -ra parts <<< "$line"
+    if [ ${#parts[@]} -ne 3 ]; then
+        echo "Invalid line format: $line"
+        continue
+    fi
+
+    app="${parts[0]}"
+    plugin="${parts[1]}"
+    repo="${parts[2]}"
+
+    plugin_dir="$HOME/.dotfiles/.config/$app/plugins/$plugin"
+    
+    if [ ! -d "$plugin_dir" ]; then
+        echo "Installing plugin: $plugin for $app"
+        mkdir -p "$(dirname "$plugin_dir")"
+        if ! git clone "$repo" "$plugin_dir"; then
+            echo "Failed to clone $repo"
+        fi
+    else
+        echo "Plugin already installed: $plugin for $app"
+    fi
+done < "$PLUGIN_LIST"
 
 if [ $system = "mac" ]; then
     echo "NVIM already installed"
@@ -198,8 +221,14 @@ else
     cd ~
 
     # Install imgcat for using iterm2's image viewing functionality over ssh
-    pip install imgcat
+    pip install imgcat black isort
 fi
 
+# Initial setup of LazyVim
+nvim --headless "+Lazy! sync" +qa
 
+# Set ZSH as default shell
+chsh -s "$(which zsh)"
+
+export PATH=$PATH:~/.local/bin/ 
 echo exec zsh >> ~/.bashrc
