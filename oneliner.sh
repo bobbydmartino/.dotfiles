@@ -174,7 +174,7 @@ touch $HOME/.bash_aliases
 ln -sf "$HOME/.dotfiles/.local" "$HOME/.local"
 ln -sf "$HOME/.dotfiles/.config/shell/profile" "$HOME/.zprofile"
 ln -sf "$HOME/.dotfiles/.config/zsh/.zshrc" "$HOME/.zshrc"
-mkdir -p ~/.tmux/
+ln -sf "$HOME/.dotfiles/.config/tmux/" "$HOME/.tmux"
 ln -sf "$HOME/.dotfiles/.config/tmux/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$HOME/.dotfiles/.config/python/.isort.cfg" "$HOME/.isort.cfg"
 ln -sf "$HOME/.dotfiles/.config" "$HOME/.config"
