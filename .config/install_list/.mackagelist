@@ -11,3 +11,5 @@ zsh
 lf
 neovim
 node
+black
+isort
