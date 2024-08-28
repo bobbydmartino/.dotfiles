@@ -224,7 +224,6 @@ done < "$PLUGIN_LIST"
 
 if [ $system = "mac" ]; then
     echo "NVIM already installed"
-    pipx install black isort
 elif [ $system = "linux" ]; then
     # Install Neovim
     sudo apt-get update && sudo apt-get install -y software-properties-common
