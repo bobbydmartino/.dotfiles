@@ -226,16 +226,21 @@ if [ $system = "mac" ]; then
     echo "NVIM already installed"
     pip install black isort
 elif [ $system = "linux" ]; then
-    # extract nvim image
-    cd ~/.local/bin && sudo ./nvim.appimage --appimage-extract
-    cd ~
+    # Install Neovim
+    sudo apt-get update && sudo apt-get install -y software-properties-common
+    sudo add-apt-repository ppa:neovim-ppa/unstable
+    sudo apt-get update
+    sudo apt-get install -y neovim
 
     # Install imgcat for using iterm2's image viewing functionality over ssh
     pip install imgcat black isort
 else
-    # extract nvim image
-    cd ~/.local/bin && ./nvim.appimage --appimage-extract
-    cd ~
+    # Install Neovim
+    apt-get update && apt-get install -y software-properties-common
+    add-apt-repository ppa:neovim-ppa/unstable
+    apt-get update
+    apt-get install -y neovim
+    
     # Install imgcat for using iterm2's image viewing functionality over ssh
     pip install imgcat black isort
 fi
