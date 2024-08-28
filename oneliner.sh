@@ -225,11 +225,17 @@ done < "$PLUGIN_LIST"
 if [ $system = "mac" ]; then
     echo "NVIM already installed"
     pip install black isort
+elif [ $system = "linux" ]; then
+    # extract nvim image
+    cd ~/.local/bin && sudo ./nvim.appimage --appimage-extract
+    cd ~
+
+    # Install imgcat for using iterm2's image viewing functionality over ssh
+    pip install imgcat black isort
 else
     # extract nvim image
     cd ~/.local/bin && ./nvim.appimage --appimage-extract
     cd ~
-
     # Install imgcat for using iterm2's image viewing functionality over ssh
     pip install imgcat black isort
 fi
