@@ -248,8 +248,5 @@ fi
 # Initial setup of LazyVim
 nvim --headless "+Lazy! sync" +qa
 
-# Set ZSH as default shell
-chsh -s "$(which zsh)"
-
 export PATH=$PATH:~/.local/bin/ 
 echo exec zsh >> ~/.bashrc
