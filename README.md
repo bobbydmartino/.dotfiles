@@ -10,14 +10,16 @@ To install the dotfiles, you can use the following command:
 
 This command will automatically install the dotfiles for you, and it's compatible with different operating systems.
 
-If you are installing this into a development docker container then run the above command in `~/` or suffer the consequences
+If you are installing this into a development docker container, add the following to your Dockerfile:
+`RUN apt-get update && apt-get install -y curl wget git apt-utils && 
+wget -O - https://raw.githubusercontent.com/bobbydmartino/.dotfiles/main/docker_install.sh | bash`
 
 Please note that the installation process will replace your current `.zshrc`, `.zprofile`, `.tmux.conf` files with symbolic links to the corresponding files in this repository. It will also create symbolic links to `.config` and `.local` in your home directory.
 
 After the installation, you can start using the dotfiles by opening a new terminal window or running `source ~/.zshrc`.
 
 ### NOTE:
-The Install requires you to install the packages in `.config/pluginlist/.packagelist` so you will need the ability to install them. The uninstall script will look at the backup file that is created and uninstall any packages that were installed during this process.
+The Install requires you to install the packages in `.config/install_list/.packagelist` so you will need the ability to install them. The uninstall script will look at the backup file that is created and uninstall any packages that were installed during this process.
 
 ## Zsh
 
@@ -60,35 +62,26 @@ You can find more information about `tmux` on the [official website](https://git
 
 ## Neovim
 
-My dotfiles include a customized configuration for [`neovim`](https://github.com/neovim/neovim), which is the editor I use.
+My dotfiles include a customized configuration for [`neovim`](https://neovim.io/), which is the editor I use. I've switched to using [LazyVim](https://www.lazyvim.org/) as the base configuration, which provides a rich set of features and plugins out of the box.
 
 The `neovim` appimage is located in `.local/bin` and the `oneliner.sh` extracts it and symlinks it so that you don't need to have it installed on your system, and that it guarantees the latest version of neovim. 
 
-My `init.lua` first loads `.config/nvim/lua/ide/plugins.lua`, which uses [`packer`](https://github.com/wbthomason/packer.nvim) to install all of the plugins. 
+My custom configurations are added to LazyVim's setup:
 
-It then requires the sets and remaps that I have defined. The plugins that I use are mostly focused on turning `neovim` into a lightweight Python IDE, but such that it is also very easy to edit plain text files.
+1. `custom_init.lua` is appended to the main `init.lua`, which sets up things like absolute line numbers and custom keymaps.
+2. `custom_plugins.lua` is added to `lua/plugins/custom.lua`, which configures additional plugins and overrides some LazyVim defaults.
 
-The plugins I use are:
-- [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter) for syntax highlighting
-- [`undotree`](https://github.com/mbbill/undotree) for long running undo's to files
-- [`vim-fugitive`](https://github.com/tpope/vim-fugitive) for git integration
-- [`vim-surround`](https://github.com/tpope/vim-surround) for surrounding text with quotes and brackets
-- [`nvim-autopairs`](https://github.com/jiangmiao/auto-pairs) for automatically having the complement to any punctuation
-- [`vimwiki`](https://github.com/vimwiki/vimwiki) for notes
-- [`nvim-tree`](https://github.com/jianjunjiu/nvim-tree) for navigation (use Ctrl-n to toggle)
-- [`bufferline`](https://github.com/akinsho/bufferline.nvim) for adding a more sublime feel (pun intended) use H and L to toggle between them
-- [`harpoon`](https://github.com/theprimeagen/harpoon) for better navigation and file management.
-- [`telescope`](https://github.com/nvim-lua/telescope.nvim) for fuzzy finding
-- [`copilot`](https://github.com/nvim-lua/copilot.nvim) for AI-assisted coding.
-- [`nvim-dap`](https://github.com/mfussenegger/nvim-dap) and [`nvim-dap-ui`](https://github.com/mfussenegger/nvim-dap-ui) for debugging.
-- [`tagbar`](https://github.com/majutsushi/tagbar) for navigating large files
-- [`lsp-zero`](https://github.com/lsp-zero/lsp-zero) for handling autocomplete (makes it super easy)
-- Aesthetic plugins are [`vim-airline`](https://github.com/vim-airline/vim-airline) and [`awesome-vim-colorschemes`](https://github.com/rafi/awesome-vim-colorschemes)
+Some key features of my Neovim setup include:
 
-Please see the plugin folder in `.config/nvim/after/plugin` for the specific configurations of each of these plugins.
-Please note that you may need to install the plugins and dependencies mentioned in this section in order for the neovim to work properly.
-You can find more information about `neovim` on the [official website](https://github.com/neovim/neovim) and the [documentation](https://neovim.io/doc/)
+- Automatically opening Neo-tree on startup and focusing on the main window
+- Custom colorscheme (jupyterlike)
+- LSP configurations for Python and Lua (easily extendable for other languages)
+- Formatting setup using `conform.nvim`
+- Additional plugins like `vim-commentary`, `bufferline`, and more
 
+Please see the `custom_init.lua` and `custom_plugins.lua` files for the specific configurations.
+
+You can find more information about `neovim` on the [official website](https://neovim.io/) and the [documentation](https://neovim.io/doc/), and about LazyVim on its [website](https://www.lazyvim.org/).
 ## Customize
 
 You can customize the dotfiles by editing the files in the repository. The changes will be automatically reflected in your development environment.
