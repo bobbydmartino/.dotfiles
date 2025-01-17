@@ -162,8 +162,8 @@ fi
 [ ! -f ~/.isort.cfg ] || mv ~/.isort.cfg ~/.df_backup/.isort.cfg
 
 # Install LazyVim
-git clone https://github.com/LazyVim/starter "$HOME/.dotfiles/.config/nvim"
-rm -rf "$HOME/.dotfiles/.config/nvim/.git"
+# git clone https://github.com/LazyVim/starter "$HOME/.dotfiles/.config/nvim"
+# rm -rf "$HOME/.dotfiles/.config/nvim/.git"
 
 # create lf cache
 mkdir -p $HOME/.cache/lf
@@ -181,10 +181,10 @@ ln -sf "$HOME/.dotfiles/.config" "$HOME/.config"
 
 
 # Install custom configurations for LazyVim
-mkdir -p "$HOME/.config/nvim/lua/plugins"
-# Append custom configurations to LazyVim files
-cat "$HOME/.dotfiles/.config/lazy/custom_init.lua" >> "$HOME/.config/nvim/init.lua"
-cat "$HOME/.dotfiles/.config/lazy/custom_plugins.lua" >> "$HOME/.config/nvim/lua/plugins/custom.lua"
+# mkdir -p "$HOME/.config/nvim/lua/plugins"
+# # Append custom configurations to LazyVim files
+# cat "$HOME/.dotfiles/.config/lazy/custom_init.lua" >> "$HOME/.config/nvim/init.lua"
+# cat "$HOME/.dotfiles/.config/lazy/custom_plugins.lua" >> "$HOME/.config/nvim/lua/plugins/custom.lua"
 
 # Improved plugin installation script
 PLUGIN_LIST="$HOME/.dotfiles/.config/install_list/.pluginlist"
@@ -245,7 +245,7 @@ else
 fi
 
 # Initial setup of LazyVim
-nvim --headless "+Lazy! sync" +qa
+# nvim --headless "+Lazy! sync" +qa
 
 export PATH=$PATH:~/.local/bin/ 
 echo exec zsh >> ~/.bashrc
