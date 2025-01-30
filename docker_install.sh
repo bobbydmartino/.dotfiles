@@ -13,7 +13,7 @@ curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 apt-get install -y nodejs
 
 # Install Python packages
-uv pip install isort black imgcat
+pip install isort black imgcat
 
 # Install Neovim
 apt-get update && apt-get install -y software-properties-common
