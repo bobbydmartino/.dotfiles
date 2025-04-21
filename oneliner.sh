@@ -241,7 +241,7 @@ else
     apt-get install -y neovim
     
     # Install imgcat for using iterm2's image viewing functionality over ssh
-    pip install imgcat black isort
+    # pip install imgcat black isort
 fi
 
 # Initial setup of LazyVim
