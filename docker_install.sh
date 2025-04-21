@@ -9,8 +9,8 @@ git clone https://github.com/bobbydmartino/.dotfiles.git "$HOME/.dotfiles"
 xargs -a "$HOME/.dotfiles/.config/install_list/.packagelist" apt-get install -y
 
 # Install Node.js
-curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
-apt-get install -y nodejs
+# curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+# apt-get install -y nodejs
 
 # Install Python packages
 pip install isort black imgcat
