@@ -13,7 +13,7 @@ xargs -a "$HOME/.dotfiles/.config/install_list/.packagelist" apt-get install -y
 # apt-get install -y nodejs
 
 # Install Python packages
-pip install isort black imgcat
+pip install imgcat
 
 # Install Neovim
 apt-get update && apt-get install -y software-properties-common
