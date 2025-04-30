@@ -7,7 +7,6 @@ bat
 curl
 rsync
 git
-python3-pip
 unzip
 graphicsmagick
 ffmpegthumbnailer
