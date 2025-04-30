@@ -16,7 +16,7 @@ xargs -a "$HOME/.dotfiles/.config/install_list/.packagelist" apt-get install -y
 # uv pip install imgcat
 echo "#################################################################################################" 
 # Install Neovim
-apt-get update
+apt-get update && apt-get install -y software-properties-common
 echo "#################################################################################################" 
 add-apt-repository ppa:neovim-ppa/unstable
 echo "#################################################################################################" 
