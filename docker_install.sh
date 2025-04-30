@@ -17,9 +17,13 @@ xargs -a "$HOME/.dotfiles/.config/install_list/.packagelist" apt-get install -y
 echo "#################################################################################################" 
 # Install Neovim
 apt-get update
+echo "#################################################################################################" 
 add-apt-repository ppa:neovim-ppa/unstable
+echo "#################################################################################################" 
 apt-get update
+echo "#################################################################################################" 
 apt-get install -y neovim
+echo "#################################################################################################" 
 
 # Install LazyVim
 # git clone https://github.com/LazyVim/starter "$HOME/.dotfiles/.config/nvim"
